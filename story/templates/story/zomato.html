@@ -1,0 +1,9 @@
+{% extends "story/base.html" %}
+{% block content %}
+<ul>
+  {% for each_item in z_items %}
+  <li>"Name:" {{each_item.name|upper|truncatewords:"3"}}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
+

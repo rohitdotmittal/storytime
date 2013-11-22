@@ -1,0 +1,92 @@
+<style type="text/css">
+
+        body{
+            padding:10px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 10px;
+            background-color: yellow;
+        }
+
+        .form-group{
+            padding: 10px;
+        }
+        
+        #first_header{
+            background-color: #ffffff;
+            margin-top: 10px;
+            
+            }
+
+        #second_header{
+            background-color: #ffffff;
+            vertical-align: middle !important;
+            float: none !important;
+            margin-top: 10px;            
+            }
+
+        #center-form{
+            vertical-align: middle !important;
+            float: none !important;
+            margin-bottom: 250px;
+                        
+            }
+           
+        .navbar-inner{
+            background-color: #303030;
+            border: 1px solid;
+            border-radius: 4px 4px 4px 4px;
+            min-height: 0px;
+            padding-left: 0px;
+            padding-right: 20px;
+            }
+       
+        .restaurants{
+            position:relative;
+            overflow:hidden;
+        }
+        
+        .restaurants img{
+            float: left;
+            width: 200px;
+            height: 200px;
+            position:relative;
+            padding:1px;
+            }
+
+        .simple-caption{
+            position: absolute;
+            background: #000;
+            height: 20px;
+            width: 200px;
+            opacity: .8;
+            top: 200px;
+            left: 0px;
+            margin-left:1px;
+            }
+
+        .top-caption{
+            position: absolute;
+            background: #000;
+            height: 20px;
+            width: 200px;
+            opacity: .8;
+            top: -20px;
+            left: 0px;
+            margin-left:1px;
+            }
+
+        .shopping{
+            position:relative;
+            overflow:hidden;
+            }
+        
+        .shopping img{
+            float: left;
+            width: 200px;
+            height: 200px;
+            position:relative;
+            padding:1px;
+            }  
+
+</style>

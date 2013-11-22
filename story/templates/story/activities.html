@@ -1,0 +1,16 @@
+{% extends 'story/base.html' %}
+
+{%block content %}
+
+{% if activities %}
+{% for activity in activities %}
+    
+    <li>All activities here: {{activity.name}}</li>
+
+{% endfor %}
+
+{% else %}
+    <p> No activities came out of this queryset.</p>
+{% endif %}    
+{% endblock %}
+

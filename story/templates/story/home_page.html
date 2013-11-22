@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5//EN"
+    "http://www.w3.org/TR/html5/html5.dtd"
+    >
+{% extends 'story/base_nov16-17.47.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <title>Home Page</title>
+</head>
+
+
+<body>
+            {% block form_content %}
+            <form class="form-inline" role="form" action="/auth/" method="post">{% csrf_token %}
+                    <div class="form-group">
+                        <label class="sr-only" for="subscribeemail">Email address</label>
+                        <input type="email" class="form-control" id="username" placeholder="Email Address" name="username" value="" required=True>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="password">Password</label>
+                      <input type="password" class="form-control" id="password" placeholder="Password" name="password" value="" required=True>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> <span style ="color:white">Remember me</span>
+                      </label>
+                    </div>
+                    <button type="submit" class="btn btn-default" value="login">Login</button>                    
+                </form>
+            {% endblock %}
+
+
+
+
+    {% block content %}
+
+        <div id="home_page" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#home_page" data-slide-to="0" class="active"></li>
+              <li data-target="#home_page" data-slide-to="1"></li>
+              <li data-target="#home_page" data-slide-to="2"></li>
+            </ol>
+            
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="{% static 'images/images/img2.jpg' %}" height="620"/>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <form class="form-inline text-muted" role="form" id="center-form">
+                                <h3 style="color:purple">Curated just for you.</h3>
+                                <button type="submit" class="btn btn-primary" value="/register">Sign Up</button>                    
+                            </form>                           
+                        </div>
+                    </div>   
+                </div>
+                
+                <div class="item">
+                    <img src="{% static 'images/images/img1.jpg' %}" width="1440" height="620"/>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <form class="form-inline" role="form" id="center-form">
+                                <h3 style="color:white">The best places around you.</h3>
+                                <div class="form-group">
+                                    <label class="sr-only" for="subscribeemail">Email address</label>
+                                    <input type="email" class="form-control" id="subscribeemail" placeholder="Subscribe Email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                                </div>
+                                <div class="checkbox">
+                                </div>
+                                <button type="submit" class="btn btn-default">Sign Up</button>                    
+                            </form>
+                        </div>
+                    </div>   
+                </div>
+                
+                <div class="item">
+                    <img src="{% static 'images/images/img3.jpg' %}" width="1440" height="620"/>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <div class="form-group" id="center-form">
+                            <h3 style="color:yellow">Do what matters to you.</h3>
+                            <p><a class="btn btn-large btn-default" id >Sign Up</a></p>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+                
+            </div>
+            
+            <a class="left carousel-control" href="#home_page" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#home_page" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        
+        </div>
+    
+    
+    </div>
+    
+{% endblock %}    
+</body>
+</html>
