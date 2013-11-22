@@ -1,3 +1,3 @@
 web: gunicorn storytime.wsgi
-web: python manage.py runserver 0.0.0.0:$PORT --noreload
+web: bin/gunicorn_django --workers=4 --bind=0.0.0.0:$PORT storytime/settings.py
 
