@@ -5,13 +5,13 @@
             margin-left: 0px;
             margin-right: 0px;
             margin-top: 10px;
-            background-color: yellow;
+            /*background-color: yellow; */
         }
 
         .form-group{
             padding: 10px;
         }
-        
+  /*      
         #first_header{
             background-color: #ffffff;
             margin-top: 10px;
@@ -24,7 +24,7 @@
             float: none !important;
             margin-top: 10px;            
             }
-
+*/
         #center-form{
             vertical-align: middle !important;
             float: none !important;
@@ -33,28 +33,70 @@
             }
            
         .navbar-inner{
-            background-color: #303030;
+            background-color: #212121;
             border: 1px solid;
-            border-radius: 4px 4px 4px 4px;
+            /*border-radius: 4px 4px 4px 4px;*/
             min-height: 0px;
             padding-left: 0px;
             padding-right: 20px;
             }
        
+        .navbar-collapse{
+            background-color: #212121;
+            border-color: #212121;
+            border: 0px solid;
+            border-radius: 4px 4px 4px 4px;
+            min-height: 0px;
+            padding-left: 0px;
+            padding-right: 20px;
+            }
+            
+        .nav ul{
+            color: yellow;
+            background:transparent;
+        }
+
         .restaurants{
             position:relative;
             overflow:hidden;
         }
         
-        .restaurants img{
+        #carousel_inner img{
             float: left;
             width: 200px;
             height: 200px;
             position:relative;
             padding:1px;
+            z-index:1
             }
 
-        .simple-caption{
+        #restaurants_carousel {
+	position: relative;
+	/* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+	left: -200px;
+	list-style-type: none; 
+	margin: 0px;
+	padding: 0px;
+	width:9999px;
+            }
+
+        #shopping_carousel {
+	position: relative;
+	/* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+	left: -200px;
+	list-style-type: none; 
+	margin: 0px;
+	padding: 0px;
+	width:9999px;
+            }
+
+        #carousel_inner {
+	float: left; 
+	width: 1000px; 
+	overflow: hidden; 
+            }
+
+        .bottom-caption{
             position: absolute;
             background: #000;
             height: 20px;
@@ -63,6 +105,7 @@
             top: 200px;
             left: 0px;
             margin-left:1px;
+            z-index:2
             }
 
         .top-caption{
@@ -74,6 +117,7 @@
             top: -20px;
             left: 0px;
             margin-left:1px;
+            z-index:2
             }
 
         .shopping{
@@ -88,5 +132,13 @@
             position:relative;
             padding:1px;
             }  
+
+        #left_scroll, #right_scroll{  
+	float: left;  
+	margin-left: 10px;
+	margin-right: 10px;
+	height: 150px;  
+	width: 20px;
+            }
 
 </style>

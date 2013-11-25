@@ -5,8 +5,8 @@ from .models import Line, ZomatoItem
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
-#from django.contrib.auth.forms import UserCreationForm
-from .forms import RegistrationForm
+from django.contrib.auth.forms import UserCreationForm
+#from .forms import RegistrationForm
 
 def login(request):
     c = {}
@@ -38,19 +38,22 @@ def invalid_login():
 
 def register_user(request):
     if request.method == 'POST':
-        form = RegistrationForm(request.POST)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/register_success')
+        else:
+            return HttpResponseRedirect('/invalid_login')
         
     args = {}
     args.update(csrf(request))
         
-    args['form'] = RegistrationForm()
+    args['form'] = UserCreationForm()
     return render_to_response('story/register.html', args)
 
 def register_success(request):
     return render_to_response('story/register_success.html')
+
 
 def home_page(request):
     c = {}
