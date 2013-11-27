@@ -44,7 +44,7 @@
         .navbar-collapse{
             background-color: #212121;
             border-color: #212121;
-            border: 0px solid;
+            border: 1px solid;
             border-radius: 4px 4px 4px 4px;
             min-height: 0px;
             padding-left: 0px;
@@ -61,7 +61,12 @@
             overflow:hidden;
         }
         
-        #carousel_inner img{
+        .image_holder{
+            position:relative;
+            
+        }
+        
+        .carousel_inner img{
             float: left;
             width: 200px;
             height: 200px;
@@ -90,6 +95,27 @@
 	width:9999px;
             }
 
+        #movies_carousel {
+	position: relative;
+	/* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+	left: -200px;
+	list-style-type: none; 
+	margin: 0px;
+	padding: 0px;
+	width:9999px;
+            }
+
+        #games_carousel {
+	position: relative;
+	/* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+	left: -200px;
+	list-style-type: none; 
+	margin: 0px;
+	padding: 0px;
+	width:9999px;
+            }
+
+
         #carousel_inner {
 	float: left; 
 	width: 1000px; 
@@ -107,6 +133,18 @@
             margin-left:1px;
             z-index:2
             }
+            
+        .well{
+            position: absolute;
+            background: #000;
+            height: 20px;
+            width: 200px;
+            opacity: .8;
+            top: 200px;
+            left: 0px;
+            margin-left:1px;
+            z-index:2            
+        }
 
         .top-caption{
             position: absolute;
@@ -133,6 +171,20 @@
             padding:1px;
             }  
 
+        .games{
+            position:relative;
+            overflow:hidden;
+            }
+        
+        .games img{
+            float: left;
+            width: 200px;
+            height: 200px;
+            position:relative;
+            padding:1px;
+            }  
+
+
         #left_scroll, #right_scroll{  
 	float: left;  
 	margin-left: 10px;
@@ -140,5 +192,11 @@
 	height: 150px;  
 	width: 20px;
             }
+        
+        .modal-body{
+            background-color: white;
+            height: 100px;
+        }
+        
 
 </style>

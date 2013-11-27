@@ -6,36 +6,37 @@
       <link rel="stylesheet" type="text/css" href="{% static "images/css/default.css" %}" media = "screen" >
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+      <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
       <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' type='text/javascript'></script>
       <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 
       <script type="text/javascript">
       $(document).ready(function() {
-	/* buttons that can be turned on (1) and off (0) */
-	/* turns auto moving on */
-	var auto_slide = 1;
-	/* disables the auto moving feature when mouse is hovered over the carousel */
-	var hover_pause = 1;
-	/* sets auto moving by one image width at once every 5 seconds */
-	var auto_slide_seconds = 5000;
-	
-	/* puts one image to the left of the first one so that when the right arrow is clicked there's a image to be moved over from the left. The 'left: -200px;' css makes it so that this moved over image is hidden to the left combined with the css 'overflow: hidden;' */
-	$('#restaurants_carousel li:first').before($('#restaurants_carousel li:last'));
-	
-	if (auto_slide == 1) {
-		/* setInterval function causes the slide() function to be run every few seconds defined by the various auto_slid_seconds. It is currently set to go right but you can change it to left if you wish */
-		var timer = setInterval('slide("right")', auto_slide_seconds);
-	}
-	
-	if (hover_pause == 1) {
-		// remove the previously set setInterval function when mouse pointer is hovered over the #carousel_ul unordered list
-		$('#restaurants_carousel').hover(function() {
-			clearInterval(timer)
-		}, function() {
-			// add back in the setInterval auto-moving function when the mouse moves out of the unordered list area
-			timer = setInterval('slide("right")', auto_slide_seconds); 
-		});
-	}
+      /* buttons that can be turned on (1) and off (0) */
+      /* turns auto moving on */
+      var auto_slide = 0;
+      /* disables the auto moving feature when mouse is hovered over the carousel */
+      var hover_pause = 1;
+      /* sets auto moving by one image width at once every 5 seconds */
+      var auto_slide_seconds = 5000;
+      
+      /* puts one image to the left of the first one so that when the right arrow is clicked there's a image to be moved over from the left. The 'left: -200px;' css makes it so that this moved over image is hidden to the left combined with the css 'overflow: hidden;' */
+      $('#restaurants_carousel li:first').before($('#restaurants_carousel li:last'));
+      
+      if (auto_slide == 1) {
+	      /* setInterval function causes the slide() function to be run every few seconds defined by the various auto_slid_seconds. It is currently set to go right but you can change it to left if you wish */
+	      var timer = setInterval('slide("right")', auto_slide_seconds);
+      }
+      
+      if (hover_pause == 1) {
+	      // remove the previously set setInterval function when mouse pointer is hovered over the #carousel_ul unordered list
+	      $('#restaurants_carousel').hover(function() {
+		      clearInterval(timer)
+	      }, function() {
+		      // add back in the setInterval auto-moving function when the mouse moves out of the unordered list area
+		      timer = setInterval('slide("right")', auto_slide_seconds); 
+	      });
+      }
 });
 
 // main slide function
@@ -52,7 +53,7 @@ function slide(where) {
 	}
 	// a jquery .animate() function is used to move the unordered list to the near css position in a smooth transition animation.
 	// the ':not(:animated)' portion ensures that the jquery animation portion caused by the click of the arrow button is only initiated if there is no auto-move currently in progress on the unordered list. If this isn't set, then a double-move can happen, which screws up the jquery animation
-	$('#restaurants_carousel:not(:animated)').stop().animate({'left': left_indent}, 500, function() {
+	$('#restaurants_carousel:not(:animated)').animate({'left': left_indent}, 500, function() {
 		// after the jQuery animation is finished, the furthest left/right item is moved to the furthest right/left so that a unlimited carousel loop flow can be achieved and maintained regardless of the number of times the left and right buttons are clicked.
 		if (where == 'left') {
 			$('#restaurants_carousel li:first').before($('#restaurants_carousel li:last'));
@@ -63,14 +64,13 @@ function slide(where) {
 		$('#restaurants_carousel').css({'left' : '-200px'});
 	});
 }
-      
-    </script>
 
+</script>
       <script type="text/javascript">
       $(document).ready(function() {
 	/* buttons that can be turned on (1) and off (0) */
 	/* turns auto moving on */
-	var auto_slide = 1;
+	var auto_slide = 0;
 	/* disables the auto moving feature when mouse is hovered over the carousel */
 	var hover_pause = 1;
 	/* sets auto moving by one image width at once every 5 seconds */
@@ -120,20 +120,19 @@ function slide(where) {
 		$('#shopping_carousel').css({'left' : '-200px'});
 	});
 }
-      
-    </script>
-
-      <script type="text/javascript">
+</script>
+<script type="text/javascript">
                 $(document).ready(function(){
-        $('.image_holder').hover(function(){
+        $('#shopping_carousel .image_holder').hover(function(){
                   $(this).children('.bottom-caption').stop().animate({top:'180px'},{queue:false,duration:300});
                   $(".top-caption", this).stop().animate({top:'0px'},{queue:false,duration:300});
     }, function() {
             $(".bottom-caption", this).stop().animate({top:'200px'},{queue:false,duration:300});
             $(".top-caption", this).stop().animate({top:'-20px'},{queue:false,duration:300});
         }) }) ;
-    </script>
-        
+</script>
+
+
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
   </head>
@@ -149,7 +148,7 @@ function slide(where) {
             <span class="icon-bar"></span>
           </button>
           
-          <a href ="#" class = "navbar-brand">Reco. System</a>
+          <a href ="#" class = "navbar-brand">Explore</a>
         </div>
         
         <div class="navbar-collapse collapse">
@@ -161,15 +160,17 @@ function slide(where) {
             <li ><a href="/sports"><span>Sports</span></a></li>
             <li ><a href="/art_design"><span>Art/Design</span></a></li>
             <li ><a href="/technology"><span>Technology</span></a></li>
-            <li class = "dropdown">
-              <a href="#" class = "dropdown-toggle" data-toggle="dropdown">Category8<span class="caret"></span></a>
+            <li ><a href="/technology"><span>Fashion</span></a></li>
+            <li ><a href="/technology"><span>Electronics</span></a></li>
+            <!--<li class = "dropdown">
+              <a href="#" class = "dropdown-toggle" data-toggle="dropdown">Electronics<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Category 1</a></li>
                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Category 2</a></li>
                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sub Category 3</a></li>
                   <li class="divider"></li>
               </ul>
-          </li>
+          </li>-->
           <li>
             {% block form_content %}
             {% endblock %}

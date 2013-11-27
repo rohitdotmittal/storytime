@@ -14,14 +14,14 @@ def login(request):
     render_to_response("story/login.html", c) 
 
 def auth_view(request):
-
     username = request.POST.get('username', '')
     password = request.POST.get('password', '')
+
     user = auth.authenticate(username=username, password=password)
     
     if user is not None:
         auth.login(request, user)
-        return HttpResponseRedirect('/all_details')
+        return HttpResponseRedirect('/all_details', {'username':username})
     else:
         return HttpResponseRedirect('/invalid')
 
@@ -54,11 +54,21 @@ def register_user(request):
 def register_success(request):
     return render_to_response('story/register_success.html')
 
-
 def home_page(request):
-    c = {}
-    c.update(csrf(request))
-    return render_to_response('story/home_page.html', c)
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/register_success')
+        else:
+            return HttpResponseRedirect('/invalid_login')
+
+    args = {}
+    args.update(csrf(request))
+        
+    args['form'] = UserCreationForm()
+    return render_to_response('story/home_page.html', args)
+
 
 def home(request):
     language = 'en_gb'
@@ -87,8 +97,9 @@ def language(request, language = 'en_gb'):
 def activities(request):
     return render_to_response('story/activities.html', {'activities': ZomatoItem.objects.all().filter(activity__icontains="Activities")})
 
-def all_details(request):
-    return render_to_response("story/all_details.html", {'z_items' : ZomatoItem.objects.all()})
+def all_details(request, **kwargs):
+    username = kwargs
+    return render_to_response("story/all_details.html", {'z_items' : ZomatoItem.objects.all(), 'username':username})
 
 def hunch_page(request):
     return render_to_response("story/hunch_page.html")

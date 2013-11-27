@@ -12,11 +12,35 @@
 
 <body>
             {% block form_content %}
-                    <button type="submit" class="btn btn-default" value="login" style=margin-top:8px;margin-left:50px>Login</button> 
+                    <button type="button" class="btn btn-default" value="login" style=margin-top:8px;margin-left:70px data-toggle="modal" href ="#myModal">Login</button>
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" area-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!--<div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Enter here:</h>
+                                </div>-->
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <form class="form-inline text-muted" role="form" action="/auth/" method="post">{% csrf_token %}
+                                <div class="form-group">
+                                    <label class="sr-only" for="username">Username</label>
+                                    <input type="text" class="form-control" id="username" placeholder="Username" name="username" required=True>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required=True>
+                                </div>
+                                <button type="submit" class="btn btn-default" value="login" style="margin-left:30px">Login</button>
+                                </form>
+                            </div>
+                            <!--<div class="modal-footer">
+                                
+                            </div>-->
+                            </div>
+                        </div>
+                    </div>
             {% endblock %}
-
-
-
 
     {% block content %}
 
@@ -25,6 +49,7 @@
               <li data-target="#home_page" data-slide-to="0" class="active"></li>
               <li data-target="#home_page" data-slide-to="1"></li>
               <li data-target="#home_page" data-slide-to="2"></li>
+              <li data-target="#home_page" data-slide-to="3"></li>
             </ol>
             
             <div class="carousel-inner">
@@ -34,28 +59,27 @@
                         <div class="carousel-caption">
                             <form class="form-inline text-muted" role="form" id="center-form" action="/home_page" method="post">{% csrf_token %}
                                     <div class="form-group">
-                                          <label class="sr-only" for="{{form.username}}">Email Address</label>
-                                          Email Address
-                                          <input type="text" class="form-control" id="{{form.username}}" placeholder="Subscribe Email">
+                                          <label class="sr-only" for="username">Email Address</label>
+                                          <p style="font-family:Helvetica;color:blue;font-size:20px">Email Address</p>
                                           {{form.username}}
                                       </div>
                                       <div class="form-group">
-                                        <label class="sr-only" for="{{form.password1}}">Email Address</label>
-                                          Password
-                                          <input type="password" class="form-control" id="{{form.password1}}" placeholder="Enter Password">
+                                        <label class="sr-only" for="password">Password</label>
+                                          <p style="font-family:Helvetica;color:black;font-size:20px">Password</p>
                                         {{form.password1}}
                                       </div>
                                               <div class="form-group">
-                                                <label class="sr-only" for="{{form.password1}}">Re-enter Password</label>Re-enter Password
-                                                <input type="password" class="form-control" id="{{form.password2}}" placeholder="Re-Enter Password">
+                                                <label class="sr-only" for="password">Re-enter Password</label>
+                                                <p style="font-family:Helvetica;color:black;font-size:20px">Re-enter Password</p>
+                                              <!-- sample to add an input field  <input type="password" class="form-control" id="{{form.password2}}" placeholder="Re-Enter Password"> -->
                                               {{form.password2}}
                                               </div>
 
                                       <div class="form-group">
-                                      <button type="submit" class="btn btn-default" value="login" style="margin-left:40px">Sign Up</button>
+                                      <button type="submit" class="btn btn-default" value="login" style="margin-left:30px;margin-top:25px">Sign Up</button>
                                       </div>
 
-                                <button type="submit" class="btn btn-primary" value="/register">Sign Up</button>                    
+                                <!--<button type="submit" class="btn btn-primary" value="/register">Sign Up</button> -->                    
                             </form>                           
                         </div>
                     </div>   
@@ -65,18 +89,30 @@
                     <img src="{% static 'images/images/img1.jpg' %}" width="1440" height="620"/>
                     <div class="container">
                         <div class="carousel-caption">
-                                <form class="form" role="form" action="/register/" method="post">{% csrf_token %}
+                            <form class="form-inline text-muted" role="form" id="center-form" action="/home_page" method="post">{% csrf_token %}
                                     <div class="form-group">
-                                          <label class="sr-only" for="subscribeemail">Email Address</label>
-                                          <p>Email Address</p>
+                                          <label class="sr-only" for="{{form.username}}">Email Address</label>
+                                          <p style="font-family:Helvetica;color:black;font-size:20px">Email Address</p>
                                           {{form.username}}
                                       </div>
                                       <div class="form-group">
-                                          <p>Password</p>
+                                        <label class="sr-only" for="{{form.password1}}">Email Address</label>
+                                          <p style="font-family:Helvetica;color:black;font-size:20px">Password</p>
                                         {{form.password1}}
                                       </div>
-                                      <button type="submit" class="btn btn-default" value="login" style="margin-left:40px">Sign Up</button>                  
-                                  </form>
+                                              <div class="form-group">
+                                                <label class="sr-only" for="{{form.password1}}">Re-enter Password</label>
+                                                <p style="font-family:Helvetica;color:black;font-size:20px">Re-enter Password</p>
+                                              <!-- sample to add an input field  <input type="password" class="form-control" id="{{form.password2}}" placeholder="Re-Enter Password"> -->
+                                              {{form.password2}}
+                                              </div>
+
+                                      <div class="form-group">
+                                      <button type="submit" class="btn btn-default" value="login" style="margin-left:30px;margin-top:25px">Sign Up</button>
+                                      </div>
+
+                                <!--<button type="submit" class="btn btn-primary" value="/register">Sign Up</button> -->                    
+                            </form>                           
 
 <!--                            <form class="form-inline" role="form" id="center-form">
                                 <h3 style="color:white">The best places around you.</h3>
@@ -100,15 +136,69 @@
                     <img src="{% static 'images/images/img3.jpg' %}" width="1440" height="620"/>
                     <div class="container">
                         <div class="carousel-caption">
-                            <div class="form-group" id="center-form">
-                            <h3 style="color:yellow">Do what matters to you.</h3>
-                            <p><a class="btn btn-large btn-default" id >Sign Up</a></p>
+                            <form class="form-inline text-muted" role="form" id="center-form" action="/home_page" method="post">{% csrf_token %}
+                                    <div class="form-group">
+                                          <label class="sr-only" for="{{form.username}}">Email Address</label>
+                                          <p style="font-family:Helvetica;color:black;font-size:20px">Email Address</p>
+                                          {{form.username}}
+                                      </div>
+                                      <div class="form-group">
+                                        <label class="sr-only" for="{{form.password1}}">Email Address</label>
+                                          <p style="font-family:Helvetica;color:black;font-size:20px">Password</p>
+                                        {{form.password1}}
+                                      </div>
+                                              <div class="form-group">
+                                                <label class="sr-only" for="{{form.password1}}">Re-enter Password</label>
+                                                <p style="font-family:Helvetica;color:black;font-size:20px">Re-enter Password</p>
+                                              <!-- sample to add an input field  <input type="password" class="form-control" id="{{form.password2}}" placeholder="Re-Enter Password"> -->
+                                              {{form.password2}}
+                                              </div>
+
+                                      <div class="form-group">
+                                      <button type="submit" class="btn btn-default" value="login" style="margin-left:30px;margin-top:25px">Sign Up</button>
+                                      </div>
+
+                                <!--<button type="submit" class="btn btn-primary" value="/register">Sign Up</button> -->                    
+                            </form>                           
                             </div>
                         </div>
                     </div>   
-                </div>
                 
+                <div class="item">
+                    <img src="{% static 'images/images/img4.jpg' %}" width="1440" height="620"/>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <form class="form-inline text-muted" role="form" id="center-form" action="/home_page" method="post">{% csrf_token %}
+                                    <div class="form-group">
+                                          <label class="sr-only" for="{{form.username}}">Email Address</label>
+                                          <p style="font-family:Helvetica;color:black;font-size:20px">Email Address</p>
+                                          {{form.username}}
+                                      </div>
+                                      <div class="form-group">
+                                        <label class="sr-only" for="{{form.password1}}">Email Address</label>
+                                          <p style="font-family:Helvetica;color:black;font-size:20px">Password</p>
+                                        {{form.password1}}
+                                      </div>
+                                              <div class="form-group">
+                                                <label class="sr-only" for="{{form.password1}}">Re-enter Password</label>
+                                                <p style="font-family:Helvetica;color:black;font-size:20px">Re-enter Password</p>
+                                              <!-- sample to add an input field  <input type="password" class="form-control" id="{{form.password2}}" placeholder="Re-Enter Password"> -->
+                                              {{form.password2}}
+                                              </div>
+
+                                      <div class="form-group">
+                                      <button type="submit" class="btn btn-default" value="login" style="margin-left:30px;margin-top:25px">Sign Up</button>
+                                      </div>
+
+                                <!--<button type="submit" class="btn btn-primary" value="/register">Sign Up</button> -->                    
+                            </form>                           
+                            </div>
+                        </div>
+                    </div>                   
+                
+                </div>    
             </div>
+            
             
             <a class="left carousel-control" href="#home_page" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
