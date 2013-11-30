@@ -22,6 +22,7 @@ urlpatterns = patterns('',
         url(r'^register_success/$', 'story.views.register_success', name='register_success'),
         url(r'^profile/$', 'story.views.user_profile', name='profile'),
         url(r'^restaurants/$', 'story.views.restaurants', name='restaurants'),
+        url(r'^games/$', 'story.views.games', name='games'),
         #url(r'^storytime/', include('storytime.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

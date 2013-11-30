@@ -15,7 +15,8 @@
     
     {% block main_activity %}
     <div class="profile">
-        <h5>Click <a href="/profile">here </a>to change preferences.</h5>
+        <h5><i class="icon-linkedin" style=font-size:40px;background-color:blue>hello</i>Click <a href="/profile">here </a>to change preferences.</h5>
+        
     </div>
         
         
@@ -30,21 +31,21 @@
                 <li>
                     <div class="image_holder">
                     <img src = "{% static 'images/images/zomato1.jpg'%}" alt="This is an image"/>
-                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
-                        <div class="caption top-caption"><p>Top Caption</p></div>
+                        <div class="caption bottom-caption"><i class="bottom-caption icon-facebook"></i></div>
+                        <div class="caption top-caption"><input type="radio"></div>
                     </div>
                 </li>
                 <li>
                     <div class="image_holder">
                     <img src = "{% static 'images/images/zomato2.jpg'%}" alt="This is an image"/>
-                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
-                        <div class="caption top-caption"><p>Top Caption</p></div>
+                        <div class="caption bottom-caption"><i class="bottom-caption icon-facebook"></i></div>
+                        <div class="caption top-caption"><span class="rating star"></span><span class="rating star"></span><span class="rating star"></span></div>
                     </div>
                 </li>
                 <li>
                     <div class="image_holder">
                     <img src = "{% static 'images/images/zomato3.jpg'%}" alt="This is an image"/>
-                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption bottom-caption"><i class="bottom-caption icon-facebook"></i></div>
                         <div class="caption top-caption"><p>Top Caption</p></div>
                     </div>
                 </li>
@@ -126,6 +127,115 @@
 	    </div>
         </div>
     </div>  
+
+    <div class="container">
+        <h4>Movies</h4>
+            <div class="movies">
+                <div class='left_scroll'>
+        		<a href='javascript:slide("left");'><span class="glyphicon glyphicon-chevron-left" style="margin-top:65px"></span></a>
+                </div>
+            <div class="carousel_inner">
+                    <ul id="movies_carousel">
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/movies1.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>                
+                    </div>
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/movies2.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+            
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/movies3.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+         
+                     <div class="image_holder">
+                    <img src = "{% static 'images/images/movies4.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>                
+                    </div>
+        
+                     <div class="image_holder">
+                    <img src = "{% static 'images/images/movies5.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div> 
+                      <div class="image_holder">
+                    <img src = "{% static 'images/images/movies6.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                      <div class="image_holder">
+                    <img src = "{% static 'images/images/movies7.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                      <div class="image_holder">
+                    <img src = "{% static 'images/images/movies8.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                </ul>
+            </div>
+            <div class='right_scroll'>
+		<a href='javascript:slide("right");'><span class="glyphicon glyphicon-chevron-right" style="margin-top:65px"></span></a>
+	    </div>
+        </div>
+    </div>  
+
+    <div class="container">
+        <h4>Games</h4>
+            <div class="games">
+                <div class='left_scroll'>
+        		<a href='javascript:slide("left");'><span class="glyphicon glyphicon-chevron-left" style="margin-top:65px"></span></a>
+                </div>
+            <div class="carousel_inner">
+                    <ul id="games_carousel">
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/games1.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>                
+                    </div>
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/games2.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+            
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/games3.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+         
+                     <div class="image_holder">
+                    <img src = "{% static 'images/images/games4.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>                
+                    </div>
+        
+                     <div class="image_holder">
+                    <img src = "{% static 'images/images/games5.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div> 
+                      <div class="image_holder">
+                    <img src = "{% static 'images/images/games6.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                </ul>
+            </div>
+            <div class='right_scroll'>
+		<a href='javascript:slide("right");'><span class="glyphicon glyphicon-chevron-right" style="margin-top:65px"></span></a>
+	    </div>
+        </div>
+    </div>  
+
  
     {% endblock %}
     

@@ -11,20 +11,7 @@
         .form-group{
             padding: 10px;
         }
-/*      
-        #first_header{
-            background-color: #ffffff;
-            margin-top: 10px;
-            
-            }
 
-        #second_header{
-            background-color: #ffffff;
-            vertical-align: middle !important;
-            float: none !important;
-            margin-top: 10px;            
-            }
-*/
         #center-form{
             vertical-align: middle !important;
             float: none !important;
@@ -86,6 +73,32 @@
             overflow:hidden;
             }
        
+        .bottom-caption{
+            position: absolute;
+            /*background: #000; - gives a background to the text */
+	    text-align: center;
+            height: 20px;
+            width: 200px;
+            opacity: .5;
+            top: 200px;
+            left: 1px;
+            margin-left:1px;
+            z-index:2
+            }
+
+        .top-caption{
+            position: absolute;
+            /*background: #000; - gives a background to the text */
+	    text-align: center;
+            height: 20px;
+            width: 200px;
+            opacity: .8;
+            top: -20px;
+            left: 1px;
+            margin-left:1px;
+            z-index:2
+            }
+
         #restaurants_carousel {
             float: left;
             position: relative;
@@ -97,31 +110,29 @@
             width: 9999px;
             }
 
-        .bottom-caption{
-            position: absolute;
-            background: #000;
-            height: 20px;
-            width: 200px;
-            opacity: .8;
-            top: 200px;
-            left: 1px;
-            margin-left:1px;
-            z-index:2
-            }
-
-        .top-caption{
-            position: absolute;
-            background: #000;
-            height: 20px;
-            width: 200px;
-            opacity: .8;
-            top: -20px;
-            left: 1px;
-            margin-left:1px;
-            z-index:2
-            }
-
         #shopping_carousel {
+            float: left;
+            position: relative;
+            /* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+            left: -200px;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            width: 9999px;
+            }
+
+        #movies_carousel {
+            float: left;
+            position: relative;
+            /* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+            left: -200px;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            width: 9999px;
+            }
+
+        #games_carousel {
             float: left;
             position: relative;
             /* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
@@ -216,6 +227,16 @@
 	    width: 200px;
 	    height: 30px;
 	    background-color: green;
+	}
+
+	.star {
+	    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAQAAADI+WwIAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAJiS0dEAP+Hj8y/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAACXZwQWcAAAALAAAACgCF+qVAAAAAhUlEQVQI103NMQqCABgF4C+Fxg7QHDQ0JkFnaKqlKJBu4Np9hEDoBq2doCYP0B4UBKLYUKZvex+P/+9N/dJ3FXl9S9CopbF9U1pOkAgb3irVanOMlGqldeBoo9CmspMFOFmp/hzLmtuXzvrWvpwJFVJvLLqci8Qmzl8OhzBwcMdD6ilXfwAd9B9f78yTCQAAAABJRU5ErkJggg==);  
+	}
+
+	.rating {
+	    float: left;
+	    width: 15px;
+	    height: 20px;
 	}
 /*        
         #movies_carousel {

@@ -88,7 +88,8 @@ def profile(request):
 def restaurants(request):
     return render_to_response('story/restaurants.html')
 
-
+def games(request):
+    return render_to_response('story/games.html')
 
 def home(request):
     language = 'en_gb'
