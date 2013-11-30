@@ -91,6 +91,10 @@ def restaurants(request):
 def games(request):
     return render_to_response('story/games.html')
 
+def shopping(request):
+    return render_to_response('story/shopping.html')
+
+
 def home(request):
     language = 'en_gb'
     session_language = 'en_gb'
