@@ -1,0 +1,282 @@
+{% extends 'story/base_nov16-17.47.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <title>All_details</title>  
+</head>
+
+<body>
+
+    {% block content %}
+    <p>{{username}}</p>
+
+    {% endblock %}
+    
+    {% block main_activity %}
+    <div class="res_category_container">
+        <h4 class="left">Restaurants</h4>
+        <div class="restaurants">
+            <div class='left_scroll'>
+		<a href='javascript:slide("left");'><span class="glyphicon glyphicon-chevron-left" style="margin-top:65px"></span></a><!--<img src="{% static 'images/images/arrow_left.png'%}" />-->
+	    </div>
+            <div class="carousel_inner">
+            <ul id="restaurants_carousel">
+                <li>
+                    <div class="image_holder">
+                        <a href="http://www.zomato.com/ncr/dominos-pizza-sector-18-noida">
+                            <img src = "{% static 'images/images/zomato1.jpg'%}" alt="This is an image"/>
+                        </a>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                        <a href="http://www.zomato.com/ncr/the-flying-saucer-cafe-nehru-place-delhi">
+                            <img src = "{% static 'images/images/zomato2.jpg'%}" alt="This is an image"/>
+                        </a>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+
+                        <a href="http://www.zomato.com/ncr/pirates-of-grill-mg-road-gurgaon">
+                            <img src = "{% static 'images/images/zomato3.jpg'%}" alt="This is an image"/>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                        <a href="http://www.zomato.com/ncr/my-bar-lounge-and-restaurant-connaught-place-delhi">
+                            <img src = "{% static 'images/images/zomato4.jpg'%}" alt="This is an image"/>
+                        </a>
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                        <a href="http://www.zomato.com/ncr/white-waters-connaught-place-delhi">
+                           <img src = "{% static 'images/images/zomato5.jpg'%}" alt="This is an image"/>
+                        </a>
+
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                    <a href="http://www.zomato.com/ncr/warehouse-cafe-connaught-place-delhi">     
+                        <img src = "{% static 'images/images/zomato6.jpg'%}" alt="This is an image"/>
+                    </a>
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>
+            </ul>
+            </div>
+            <div class='right_scroll'>
+		<a href='javascript:slide("right");'><span class="glyphicon glyphicon-chevron-right" style="margin-top:90px"></span></a><!--<img src="{% static 'images/images/arrow_left.png'%}" />--> 
+            </div>
+
+        </div>
+    </div>
+        
+    <div class="category_container">
+        <h4>Shopping</h4>
+        
+            <div class='left_scroll'>
+		<a href='javascript:slide("left");'><span class="glyphicon glyphicon-chevron-left" style="margin-top:90px"></span></a><!--<img src="{% static 'images/images/arrow_left.png'%}" />-->
+	    </div>
+            <div class="carousel_inner">
+            <ul id="shopping_carousel">
+                <li>
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/shopping1.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/shopping2.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/shopping3.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                   <img src = "{% static 'images/images/shopping4.jpeg'%}" alt="This is an image"/>
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                   <img src = "{% static 'images/images/shopping5.jpeg'%}" alt="This is an image"/>
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                   <img src = "{% static 'images/images/shopping6.jpeg'%}" alt="This is an image"/>
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>
+            </ul>
+            </div>
+            <div class='right_scroll'>
+		<a href='javascript:slide("right");'><span class="glyphicon glyphicon-chevron-right" style="margin-top:90px"></span></a><!--<img src="{% static 'images/images/arrow_left.png'%}" />-->
+	    </div>  
+    </div>
+
+    <div class="category_container">
+        <h4>Movies</h4>
+            <div class='left_scroll'>
+		<a href='javascript:slide("left");'><span class="glyphicon glyphicon-chevron-left" style="margin-top:90px"></span></a><!--<img src="{% static 'images/images/arrow_left.png'%}" />-->
+	    </div>
+            <div class="carousel_inner">
+            <ul id="movies_carousel">
+                <li>
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/movies1.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/movies2.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/movies3.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                   <img src = "{% static 'images/images/movies4.jpeg'%}" alt="This is an image"/>
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                   <img src = "{% static 'images/images/movies5.jpeg'%}" alt="This is an image"/>
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                   <img src = "{% static 'images/images/movies6.jpeg'%}" alt="This is an image"/>
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>
+
+                <li>
+                    <div class="image_holder">
+                   <img src = "{% static 'images/images/movies7.jpeg'%}" alt="This is an image"/>
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>
+                
+                <li>
+                    <div class="image_holder">
+                   <img src = "{% static 'images/images/movies8.jpeg'%}" alt="This is an image"/>
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>  
+            </ul>
+            </div>
+            <div class='right_scroll'>
+		<a href='javascript:slide("right");'><span class="glyphicon glyphicon-chevron-right" style="margin-top:90px"></span></a><!--<img src="{% static 'images/images/arrow_left.png'%}" />-->
+	    </div>  
+    </div>     
+
+    <div class="category_container">
+        <h4>Games</h4>
+        
+            <div class='left_scroll'>
+		<a href='javascript:slide("left");'><span class="glyphicon glyphicon-chevron-left" style="margin-top:90px"></span></a><!--<img src="{% static 'images/images/arrow_left.png'%}" />-->
+	    </div>
+            <div class="carousel_inner">
+            <ul id="games_carousel">
+                <li>
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/games1.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/games2.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                    <img src = "{% static 'images/images/games3.jpeg'%}" alt="This is an image"/>
+                        <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                        <div class="caption top-caption"><p>Top Caption</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                   <img src = "{% static 'images/images/games4.jpeg'%}" alt="This is an image"/>
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                   <img src = "{% static 'images/images/games5.jpeg'%}" alt="This is an image"/>
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>
+                <li>
+                    <div class="image_holder">
+                   <img src = "{% static 'images/images/games6.jpeg'%}" alt="This is an image"/>
+                       <div class="caption bottom-caption"><p>Bottom Caption</p></div>
+                       <div class="caption top-caption"><p>Top Caption</p></div>
+                   </div>
+                </li>
+
+            </ul>
+            </div>
+            <div class='right_scroll'>
+		<a href='javascript:slide("right");'><span class="glyphicon glyphicon-chevron-right" style="margin-top:90px"></span></a><!--<img src="{% static 'images/images/arrow_left.png'%}" />-->
+	    </div>  
+    </div>
+
+
+    {% endblock %}
+    
+
+    
+</body>

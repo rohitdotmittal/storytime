@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Line(models.Model):
@@ -29,3 +30,12 @@ class ZomatoItem(models.Model):
     def __unicode__(self):
         return self.name
 
+class user_profile(models.Model):
+    user = models.OneToOneField(User)
+    likes_shopping = models.BooleanField()
+    favorite_res_name = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return self.user
+
+User.profile = property(lambda u: user_profile.objects.get_or_create(user=u)[0])

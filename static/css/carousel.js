@@ -1,29 +1,29 @@
-$(document).ready(function() {
-      /* buttons that can be turned on (1) and off (0) */
-      /* turns auto moving on */
-      var auto_slide = 1;
-      /* disables the auto moving feature when mouse is hovered over the carousel */
-      var hover_pause = 1;
-      /* sets auto moving by one image width at once every 5 seconds */
-      var auto_slide_seconds = 3000;
-      
-      /* puts one image to the left of the first one so that when the right arrow is clicked there's a image to be moved over from the left. The 'left: -200px;' css makes it so that this moved over image is hidden to the left combined with the css 'overflow: hidden;' */
-      $('#restaurants_carousel li:first').before($('#restaurants_carousel li:last'));
-      
-      if (auto_slide == 1) {
-	      /* setInterval function causes the slide() function to be run every few seconds defined by the various auto_slid_seconds. It is currently set to go right but you can change it to left if you wish */
-	      var timer = setInterval('slide("right")', auto_slide_seconds);
-      }
-      
-      if (hover_pause == 1) {
-	      // remove the previously set setInterval function when mouse pointer is hovered over the #carousel_ul unordered list
-	      $('#restaurants_carousel').hover(function() {
-		      clearInterval(timer)
-	      }, function() {
-		      // add back in the setInterval auto-moving function when the mouse moves out of the unordered list area
-		      timer = setInterval('slide("right")', auto_slide_seconds); 
-	      });
-      }
+      $(document).ready(function() {
+	/* buttons that can be turned on (1) and off (0) */
+	/* turns auto moving on */
+	var auto_slide = 1;
+	/* disables the auto moving feature when mouse is hovered over the carousel */
+	var hover_pause = 1;
+	/* sets auto moving by one image width at once every 5 seconds */
+	var auto_slide_seconds = 5000;
+	
+	/* puts one image to the left of the first one so that when the right arrow is clicked there's a image to be moved over from the left. The 'left: -200px;' css makes it so that this moved over image is hidden to the left combined with the css 'overflow: hidden;' */
+	$('#restaurants_carousel li:first').before($('#restaurants_carousel li:last'));
+	
+	if (auto_slide == 1) {
+		/* setInterval function causes the slide() function to be run every few seconds defined by the various auto_slid_seconds. It is currently set to go right but you can change it to left if you wish */
+		var timer = setInterval('slide("right")', auto_slide_seconds);
+	}
+	
+	if (hover_pause == 1) {
+		// remove the previously set setInterval function when mouse pointer is hovered over the #carousel_ul unordered list
+		$('#restaurants_carousel').hover(function() {
+			clearInterval(timer)
+		}, function() {
+			// add back in the setInterval auto-moving function when the mouse moves out of the unordered list area
+			timer = setInterval('slide("right")', auto_slide_seconds); 
+		});
+	}
 });
 
 // main slide function

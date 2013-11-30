@@ -2,6 +2,7 @@
 
 from django import forms
 from django.contrib.auth.models import User
+from .models import user_profile
 from django.contrib.auth.forms import UserCreationForm
 
 class RegistrationForm(UserCreationForm):
@@ -20,6 +21,11 @@ class RegistrationForm(UserCreationForm):
             user.save()
             
         return user
- 
+
+class user_profile_form(forms.ModelForm):
+
+    class Meta:
+        model = user_profile
+        fields = ('likes_shopping', 'favorite_res_name')
     
     

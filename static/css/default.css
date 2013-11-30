@@ -11,7 +11,7 @@
         .form-group{
             padding: 10px;
         }
-  /*      
+/*      
         #first_header{
             background-color: #ffffff;
             margin-top: 10px;
@@ -56,70 +56,45 @@
             background:transparent;
         }
 
-        .restaurants{
+        .restaurants {
             position:relative;
             overflow:hidden;
-        }
-        
-        .image_holder{
+            }
+
+        .image_holder {
             position:relative;
-            
-        }
-        
-        .carousel_inner img{
+            overflow: hidden;
             float: left;
             width: 200px;
             height: 200px;
-            position:relative;
             padding:1px;
-            z-index:1
+            z-index:1;
+        }
+               
+        .carousel_inner img {
+            width: 200px;
+            height: 200px;
+            padding-left:1px;
+            padding-right:1px;
+            z-index:1;
             }
 
+        .carousel_inner {
+            float:left;
+            position:relative;
+            width: 1000px;
+            overflow:hidden;
+            }
+       
         #restaurants_carousel {
-	position: relative;
-	/* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
-	left: -200px;
-	list-style-type: none; 
-	margin: 0px;
-	padding: 0px;
-	width:9999px;
-            }
-
-        #shopping_carousel {
-	position: relative;
-	/* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
-	left: -200px;
-	list-style-type: none; 
-	margin: 0px;
-	padding: 0px;
-	width:9999px;
-            }
-
-        #movies_carousel {
-	position: relative;
-	/* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
-	left: -200px;
-	list-style-type: none; 
-	margin: 0px;
-	padding: 0px;
-	width:9999px;
-            }
-
-        #games_carousel {
-	position: relative;
-	/* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
-	left: -200px;
-	list-style-type: none; 
-	margin: 0px;
-	padding: 0px;
-	width:9999px;
-            }
-
-
-        #carousel_inner {
-	float: left; 
-	width: 1000px; 
-	overflow: hidden; 
+            float: left;
+            position: relative;
+            /* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+            left: -200px;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            width: 9999px;
             }
 
         .bottom-caption{
@@ -129,11 +104,35 @@
             width: 200px;
             opacity: .8;
             top: 200px;
-            left: 0px;
+            left: 1px;
             margin-left:1px;
             z-index:2
             }
-            
+
+        .top-caption{
+            position: absolute;
+            background: #000;
+            height: 20px;
+            width: 200px;
+            opacity: .8;
+            top: -20px;
+            left: 1px;
+            margin-left:1px;
+            z-index:2
+            }
+
+        #shopping_carousel {
+            float: left;
+            position: relative;
+            /* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+            left: -200px;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            width: 9999px;
+            }
+
+/*            
         .well{
             position: absolute;
             background: #000;
@@ -145,18 +144,7 @@
             margin-left:1px;
             z-index:2            
         }
-
-        .top-caption{
-            position: absolute;
-            background: #000;
-            height: 20px;
-            width: 200px;
-            opacity: .8;
-            top: -20px;
-            left: 0px;
-            margin-left:1px;
-            z-index:2
-            }
+*/
 
         .shopping{
             position:relative;
@@ -171,6 +159,85 @@
             padding:1px;
             }  
 
+        .left_scroll, .right_scroll{  
+	float: left;  
+	margin-left: 10px;
+	margin-right: 10px;
+	height: 150px;  
+	width: 20px;
+            }
+
+      
+        .modal-body{
+            background-color: white;
+            height: 100px;
+        }
+
+	.item_container img{
+	    position: relative;
+	    float: left;
+	    overflow: hidden;
+	    width: 200px;
+	    height: 200px;
+	    }
+
+	.item_container{
+	    position: relative;
+	    float: left;
+	    border: solid 1px;
+	    overflow: hidden;
+	    width: 200px;
+	    height: 350px;
+	    margin: 10px;
+	    border-radius: 8px;
+	    }
+
+	.name_container{
+	    background-color: black;
+	    position: absolute;
+	    top: 200px;
+	    left: 0px;
+	    width: 200px;
+	    height: 50px;
+	    border-bottom-left-radius: 4px;
+	    border-bottom-right-radius: 4px;
+	    text-align: center;
+	    }
+
+	.highlight_container{
+	    position: absolute;
+	    top: 250px;
+	    text-align: center;
+	    }
+
+	.rating_container{
+	    position: absolute;
+	    top: 320px;
+	    width: 200px;
+	    height: 30px;
+	    background-color: green;
+	}
+/*        
+        #movies_carousel {
+	position: relative;
+	/* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+/*	left: -200px;
+	list-style-type: none; 
+	margin: 0px;
+	padding: 0px;
+	width:9999px;
+            }
+
+        #games_carousel {
+	position: relative;
+	/* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+/*	left: -200px;
+	list-style-type: none; 
+	margin: 0px;
+	padding: 0px;
+	width:1000px;
+            }
+
         .games{
             position:relative;
             overflow:hidden;
@@ -184,19 +251,5 @@
             padding:1px;
             }  
 
-
-        #left_scroll, #right_scroll{  
-	float: left;  
-	margin-left: 10px;
-	margin-right: 10px;
-	height: 150px;  
-	width: 20px;
-            }
-        
-        .modal-body{
-            background-color: white;
-            height: 100px;
-        }
-        
-
+*/
 </style>

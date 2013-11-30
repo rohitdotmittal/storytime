@@ -1,11 +1,13 @@
 # Create your views here.
 #from django.http import HttpResponse
 from django.shortcuts import render_to_response
-from .models import Line, ZomatoItem
+from .models import Line, ZomatoItem, user_profile
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
 from django.contrib.auth.forms import UserCreationForm
+from .forms import user_profile_form
+from django.contrib.auth.decorators import login_required
 #from .forms import RegistrationForm
 
 def login(request):
@@ -68,6 +70,24 @@ def home_page(request):
         
     args['form'] = UserCreationForm()
     return render_to_response('story/home_page.html', args)
+
+@login_required
+def profile(request):
+    if request.method == 'POST':
+        form = user_profile_form(request.POST, instance=request.user.profile)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/all_details')
+        else:
+            return HttpResponseRedirect('/home_page')
+    else:
+        user = request.user
+        profile = user.profile
+        form = user_profile_form(instance=profile)
+    
+def restaurants(request):
+    return render_to_response('story/restaurants.html')
+
 
 
 def home(request):
