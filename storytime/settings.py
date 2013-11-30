@@ -135,10 +135,35 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'dj_static',
+    'social_auth',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
 
+AUTHENTICATION_BACKENDS = (
+        #'social_auth.backends.contrib.github.GithubBackend',
+        'social_auth.backends.facebook.FacebookBackend',
+        #'social_auth.backends.twitter.TwitterBackend',
+        #'social_auth.backends.google.GoogleOAuth2Backend',
+        'django.contrib.auth.backends.ModelBackend',
+        )
+
+FACEBOOK_APP_ID = '7879648351'
+FACEBOOK_API_SECRET = '929a6f9f6e6c4736ef9e9184366f7486'
+
+LOGIN_URL = '/home_page'
+LOGIN_REDIRECT_URL = '/all_details/'
+LOGIN_ERROR_URL    = '/invalid/'
+SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/new-users-redirect-url/'
+SOCIAL_AUTH_COMPLETE_URL_NAME  = 'socialauth_complete'
+
+import random
+SOCIAL_AUTH_DEFAULT_USERNAME = lambda: random.choice(['Darth Vader', 'Obi-Wan Kenobi', 'R2-D2', 'C-3PO', 'Yoda'])
+
+SOCIAL_AUTH_ENABLED_BACKENDS = ('facebook',)
+
+
+        
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
 # A sample logging configuration. The only tangible logging
