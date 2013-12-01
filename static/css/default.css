@@ -195,28 +195,33 @@
 	.item_container{
 	    position: relative;
 	    float: left;
-	    border: solid 1px;
+	    border: solid #E0E0E0 1px;
 	    overflow: hidden;
 	    width: 200px;
 	    height: 350px;
 	    margin: 10px;
-	    border-radius: 8px;
 	    }
 
 	.name_container{
 	    background-color: black;
+	    float: none;
+	    opacity: 0.4;
 	    position: absolute;
 	    top: 200px;
 	    left: 0px;
 	    width: 200px;
 	    height: 50px;
 	    text-align: center;
+	    font-family: BentonSans,Arial,sans-serif;
 	    }
 
 	.highlight_container{
 	    position: absolute;
 	    top: 250px;
 	    text-align: center;
+	    font-family: BentonSans,Arial,sans-serif;
+	    height: 70px;
+	    width: 200px;
 	    }
 
 	.rating_container{
@@ -225,6 +230,9 @@
 	    width: 200px;
 	    height: 30px;
 	    background-color: green;
+	    opacity: 0.6;
+	    font-family: BentonSans,Arial,sans-serif;
+	    text-align: center;
 	}
 
 	.star {

@@ -154,7 +154,7 @@ FACEBOOK_API_SECRET = '929a6f9f6e6c4736ef9e9184366f7486'
 LOGIN_URL = '/home_page'
 LOGIN_REDIRECT_URL = '/all_details/'
 LOGIN_ERROR_URL    = '/invalid/'
-SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/new-users-redirect-url/'
+SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/all_details/'
 SOCIAL_AUTH_COMPLETE_URL_NAME  = 'socialauth_complete'
 
 import random
