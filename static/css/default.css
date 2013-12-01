@@ -199,7 +199,92 @@
 	    overflow: hidden;
 	    width: 200px;
 	    height: 350px;
-	    margin: 10px;
+	    margin: 10px 10px 25px 10px;
+	    }
+
+	.top_item_container{
+	    position: relative;
+	    float: none;
+	    border: solid #E0E0E0 1px;
+	    overflow: hidden;
+	    left: 100px;
+	    top: 10px;
+	    width: 800px;
+	    height: 300px;
+	    margin: 10px 10px 25px 10px;
+	    }
+
+	.top_item_container img{
+	    position: relative;
+	    float: left;
+	    overflow: hidden;
+	    width: 500px;
+	    height: 280px;
+	    left: 10px;
+	    top: 10px;
+	    }
+
+	.top_name_container{
+	    background-color: black;
+	    opacity: 0.25;
+	    position: absolute;
+	    top: 10px;
+	    left: 515px;
+	    width: 275px;
+	    height: 25px;
+	    text-align: center;
+	    vertical-align: middle;
+	    line-height: 25px;
+	    font-family: BentonSans,Arial,sans-serif;
+	    }
+
+	.top_name_container span{
+	    color: white;
+	    }
+
+	.top_highlight_container{
+	    position: absolute;
+	    top: 270px;
+	    left: 10px;
+	    text-align: center;
+	    font-family: BentonSans,Arial,sans-serif;
+	    height: 70px;
+	    width: 500px;
+	    }
+
+	.top_description_container{
+	    position: absolute;
+	    top: 45px;
+	    left: 515px;
+	    text-align: center;
+	    font-family: BentonSans,Arial,sans-serif;
+	    height: 200px;
+	    width: 275px;
+	    }
+
+	.top_description_container p{
+	    color: grey;
+	    text-align: center;
+	    font-family: BentonSans,Arial,sans-serif;
+
+	    }
+
+	.top_rating_container{
+	    position: absolute;
+	    top: 260px;
+	    left: 515px;
+	    text-align: center;
+	    font-family: BentonSans,Arial,sans-serif;
+	    height: 30px;
+	    width: 275px;
+	    background-color: green;
+	    opacity: 0.6;
+	    line-height: 30px;
+	    }
+
+	.top_rating_container p {
+	    color: white;
+	    vertical-align: middle;
 	    }
 
 	.name_container{
@@ -207,17 +292,17 @@
 	    float: none;
 	    opacity: 0.4;
 	    position: absolute;
-	    top: 200px;
+	    top: 203px;
 	    left: 0px;
 	    width: 200px;
-	    height: 50px;
+	    height: 45px;
 	    text-align: center;
 	    font-family: BentonSans,Arial,sans-serif;
 	    }
 
 	.highlight_container{
 	    position: absolute;
-	    top: 250px;
+	    top: 255px;
 	    text-align: center;
 	    font-family: BentonSans,Arial,sans-serif;
 	    height: 70px;
@@ -233,7 +318,13 @@
 	    opacity: 0.6;
 	    font-family: BentonSans,Arial,sans-serif;
 	    text-align: center;
+	    line-height: 30px;
 	}
+	
+	.rating_container p {
+	    color: white;
+	    vertical-align: middle;
+	    }
 
 	.star {
 	    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAQAAADI+WwIAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAJiS0dEAP+Hj8y/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAACXZwQWcAAAALAAAACgCF+qVAAAAAhUlEQVQI103NMQqCABgF4C+Fxg7QHDQ0JkFnaKqlKJBu4Np9hEDoBq2doCYP0B4UBKLYUKZvex+P/+9N/dJ3FXl9S9CopbF9U1pOkAgb3irVanOMlGqldeBoo9CmspMFOFmp/hzLmtuXzvrWvpwJFVJvLLqci8Qmzl8OhzBwcMdD6ilXfwAd9B9f78yTCQAAAABJRU5ErkJggg==);  
