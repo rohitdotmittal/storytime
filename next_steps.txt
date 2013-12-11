@@ -1,0 +1,16 @@
+Current Status:
+Overall category pages - We are showing a few results for each of the categories on the overall page.
+User specific pages - We are showing pre defined categories on the user pages.
+User profile page - We are displaying the categories and admin has the ability to modify those categories.
+Home page - Carousel function on the images; sign up moves with the images.
+Categories - There are some basic categories.
+Data - We just have data for restaurants and that too only for Delhi.
+
+Next Steps:
+Overall Category Pages: Design needs to be more appealing; enhancements required in terms of overall structure of the page, colors, and images. There will be a bigger image in the middle of the screen which will have carousel of top 5 picks with image on the left, name on the top right, ratings on bottom right, and description in between. Below that, there will be smaller boxes of other related content that will have image at the top of the box, then name of the image below it, then a description, and then rating at the bottom. The width and height of the boxes need to be optimal so the doesn't look too crowded. We will also limit the number of suggestions to 15 which won't load until the user scrolls down to look for more.
+
+User Specific Pages: Change preferences and settings option would move to the top right. It will be a standard dropdown (when someone hovers over it, dropdown shows various options such as profile, settings, logout etc.) A new carousel design is required to give the effect of curated listings. As of now, it looks more of a automated system. The size, number, and positioning of images will change accordingly. More categories need to be added and only the categories that a user has selected in it's profile will be shown here. Each category with have upto 12 recommendations.
+
+User Profile Page - It needs to be remodeled to show major categories and sub categories. Each category (and it's subcategories) will have an image at the top, then name of the category, and then various subcategories with the toggle on/off button. The color of the button will be pink and button will look like iPod's on/off button.
+
+Home Page - The carousel needs to change to just a background image with a "Sign Up with Facebook" button, "Sign Up with google plus" button, and "Sign Up with email" button. The navigation bar also needs to improve including the text color/type/size of the navigation items.
