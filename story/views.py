@@ -86,7 +86,8 @@ def profile(request):
         form = user_profile_form(instance=profile)
     
 def restaurants(request):
-    return render_to_response('story/restaurants.html')
+    items_list = list(ZomatoItem.objects.all())
+    return render_to_response('story/restaurants.html', {'z_items' : items_list})
 
 def games(request):
     return render_to_response('story/games.html')
@@ -105,7 +106,7 @@ def home(request):
     if 'lang' in request.session:
         session_language = request.session['lang']
 
-    return render_to_response("story/home.html", {'lines': Line.objects.all(), 'language' : language, 'session_language' : session_language})
+    return render_to_response("story/home_page.html", {'lines': Line.objects.all(), 'language' : language, 'session_language' : session_language})
 
 def zomato(request):
     return render_to_response("story/zomato.html", {'z_items' : ZomatoItem.objects.all()})
@@ -122,6 +123,7 @@ def language(request, language = 'en_gb'):
 def activities(request):
     return render_to_response('story/activities.html', {'activities': ZomatoItem.objects.all().filter(activity__icontains="Activities")})
 
+@login_required
 def all_details(request, **kwargs):
     username = kwargs
     return render_to_response("story/all_details.html", {'z_items' : ZomatoItem.objects.all(), 'username':username})

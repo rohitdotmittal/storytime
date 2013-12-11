@@ -38,6 +38,13 @@
             padding-right: 20px;
             }
             
+        .nav ul span{
+	    font-family: BentonSans,Arial,sans-serif;
+	    height: 100px;
+	    text-decoration: none;
+	    
+            }
+
         .nav ul{
             color: yellow;
             background:transparent;
@@ -46,6 +53,26 @@
         .restaurants {
             position:relative;
             overflow:hidden;
+            }
+
+        .shopping{
+            position:relative;
+            overflow:hidden;
+            }
+
+        .carousel_inner {
+            float:left;
+            position:relative;
+            width: 1000px;
+            overflow:hidden;
+            }
+
+        .carousel_inner img {
+            width: 200px;
+            height: 200px;
+            padding-left:1px;
+            padding-right:1px;
+            z-index:1;
             }
 
         .image_holder {
@@ -57,22 +84,32 @@
             padding:1px;
             z-index:1;
         }
-               
-        .carousel_inner img {
+
+        .top-caption{
+            position: absolute;
+            /*background: #000; - gives a background color to the text */
+	    text-align: center;
+            height: 20px;
             width: 200px;
-            height: 200px;
-            padding-left:1px;
-            padding-right:1px;
-            z-index:1;
+            opacity: .8;
+            top: -20px;
+            left: 1px;
+            margin-left: 1px;
+	    display: inline-block;
+            z-index:2
             }
 
-        .carousel_inner {
-            float:left;
-            position:relative;
-            width: 1000px;
-            overflow:hidden;
+        .top-caption img{
+            height: 20px;
+            width: 20px;
+	    position: relative;
+            z-index:2
             }
-       
+
+        .top-caption ul{
+	    float: left;
+            }
+
         .bottom-caption{
             position: absolute;
             /*background: #000; - gives a background to the text */
@@ -81,19 +118,6 @@
             width: 200px;
             opacity: .5;
             top: 200px;
-            left: 1px;
-            margin-left:1px;
-            z-index:2
-            }
-
-        .top-caption{
-            position: absolute;
-            /*background: #000; - gives a background to the text */
-	    text-align: center;
-            height: 20px;
-            width: 200px;
-            opacity: .8;
-            top: -20px;
             left: 1px;
             margin-left:1px;
             z-index:2
@@ -155,12 +179,8 @@
             margin-left:1px;
             z-index:2            
         }
-*/
 
-        .shopping{
-            position:relative;
-            overflow:hidden;
-            }
+
         
         .shopping img{
             float: left;
@@ -169,7 +189,7 @@
             position:relative;
             padding:1px;
             }  
-
+*/
         .left_scroll, .right_scroll{  
 	float: left;  
 	margin-left: 10px;

@@ -13,7 +13,7 @@
                     <img src="{% static 'images/images/zomato1.jpg'%}">
                 </a>
             <div class="name_container">
-                <h5 style=color:white>Restaurant name</h5>
+                <h5 style=color:white>Restaurant Name</h5>
             </div>
             <div class="highlight_container">
                 <h5>Highlights of the restaurant.</h5>
@@ -108,6 +108,11 @@
             </div>
         </div>
     </div>
+    <p>{{z_items.name}}</p>
+    {% for each_item in z_items %}
+        <p>{{each_item.name}}</p>
+    {% endfor %}
+
 </div>
 <!--   
     <div class="y-card"  data-position="" data-row="" data-cluster="" id="Roasted-garlic-mashed-potatoes-315012" data-id="Roasted-garlic-mashed-potatoes-315012" data-collections="">
