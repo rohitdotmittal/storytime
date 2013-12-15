@@ -1,0 +1,407 @@
+<style type="text/css">
+
+        body{
+            padding:10px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 10px;
+            /*background-color: yellow; */
+        }
+
+        .form-group{
+            padding: 10px;
+        }
+
+        #center-form{
+            vertical-align: middle !important;
+            float: none !important;
+            margin-bottom: 250px;
+                        
+            }
+           
+        .navbar-inner{
+            background-color: #212121;
+            border: 1px solid;
+            /*border-radius: 4px 4px 4px 4px;*/
+            min-height: 0px;
+            padding-left: 0px;
+            padding-right: 20px;
+            }
+       
+        .navbar-collapse{
+            background-color: #212121;
+            border-color: #212121;
+            border: 1px solid;
+            border-radius: 4px 4px 4px 4px;
+            min-height: 0px;
+            padding-left: 0px;
+            padding-right: 20px;
+            }
+            
+        .nav ul span{
+	    font-family: BentonSans,Arial,sans-serif;
+	    height: 100px;
+	    text-decoration: none;
+	    
+            }
+
+        .nav ul{
+            color: yellow;
+            background:transparent;
+        }
+
+        .restaurants {
+            position:relative;
+            overflow:hidden;
+            }
+
+        .shopping{
+            position:relative;
+            overflow:hidden;
+            }
+
+        .carousel_inner {
+            float:left;
+            position:relative;
+            width: 1000px;
+            overflow:hidden;
+            }
+
+        .carousel_inner img {
+            width: 200px;
+            height: 200px;
+            padding-left:1px;
+            padding-right:1px;
+            z-index:1;
+            }
+
+        .image_holder {
+            position:relative;
+            overflow: hidden;
+            float: left;
+            width: 200px;
+            height: 200px;
+            padding:1px;
+            z-index:1;
+        }
+
+        .top-caption{
+            position: absolute;
+            /*background: #000; - gives a background color to the text */
+	    text-align: center;
+            height: 20px;
+            width: 200px;
+            opacity: .8;
+            top: -20px;
+            left: 1px;
+            margin-left: 1px;
+	    display: inline-block;
+            z-index:2
+            }
+
+        .top-caption img{
+            height: 20px;
+            width: 20px;
+	    position: relative;
+            z-index:2
+            }
+
+        .top-caption ul{
+	    float: left;
+            }
+
+        .bottom-caption{
+            position: absolute;
+            /*background: #000; - gives a background to the text */
+	    text-align: center;
+            height: 20px;
+            width: 200px;
+            opacity: .5;
+            top: 200px;
+            left: 1px;
+            margin-left:1px;
+            z-index:2
+            }
+
+        #restaurants_carousel {
+            float: left;
+            position: relative;
+            /* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+            left: -200px;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            width: 9999px;
+            }
+
+        #shopping_carousel {
+            float: left;
+            position: relative;
+            /* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+            left: -200px;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            width: 9999px;
+            }
+
+        #movies_carousel {
+            float: left;
+            position: relative;
+            /* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+            left: -200px;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            width: 9999px;
+            }
+
+        #games_carousel {
+            float: left;
+            position: relative;
+            /* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+            left: -200px;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            width: 9999px;
+            }
+
+/*            
+        .well{
+            position: absolute;
+            background: #000;
+            height: 20px;
+            width: 200px;
+            opacity: .8;
+            top: 200px;
+            left: 0px;
+            margin-left:1px;
+            z-index:2            
+        }
+
+
+        
+        .shopping img{
+            float: left;
+            width: 200px;
+            height: 200px;
+            position:relative;
+            padding:1px;
+            }  
+*/
+        .left_scroll, .right_scroll{  
+	float: left;  
+	margin-left: 10px;
+	margin-right: 10px;
+	height: 150px;  
+	width: 20px;
+            }
+
+      
+        .modal-body{
+            background-color: white;
+            height: 100px;
+        }
+
+	.top_picks p{
+	    font-family: BentonSans,Arial,sans-serif;
+	    font-size: 30px;
+	    font-weight: bold;
+	    }
+
+	.item_container{
+	    position: relative;
+	    float: left;
+	    border: solid #E0E0E0 1px;
+	    overflow: hidden;
+	    width: 350px;
+	    height: 250px;
+	    margin: 10px 10px 25px 10px;
+	    }
+
+	.item_container img{
+	    position: relative;
+	    float: left;
+	    overflow: hidden;
+	    width: 375px;
+	    height: 150px;
+	    }
+
+	.name_container p{
+	    vertical-align: middle;
+	    color: white;
+	    font-family: BentonSans,Arial,sans-serif;
+	    }
+
+	.name_container{
+	    background-color: black;
+	    float: none;
+	    opacity: 0.3;
+	    position: absolute;
+	    top: 153px;
+	    left: 0px;
+	    width: 375px;
+	    height: 20px;
+	    line-height: 20px;
+	    text-align: center;
+	    font-family: BentonSans,Arial,sans-serif;
+	    }
+
+	.highlight_container{
+	    position: absolute;
+	    top: 175px;
+	    text-align: center;
+	    font-family: BentonSans,Arial,sans-serif;
+	    height: 70px;
+	    width: 375px;
+	    }
+
+	.rating_container{
+	    position: absolute;
+	    top: 230px;
+	    width: 375px;
+	    height: 20px;
+	    background-color: green;
+	    opacity: 0.6;
+	    font-family: BentonSans,Arial,sans-serif;
+	    text-align: center;
+	    line-height: 20px;
+	}
+	
+	.rating_container p {
+	    color: white;
+	    vertical-align: middle;
+	    }
+
+	.top_item_container{
+	    position: relative;
+	    float: none;
+	    border: solid #E0E0E0 1px;
+	    overflow: hidden;
+	    left: 100px;
+	    top: 10px;
+	    width: 800px;
+	    height: 300px;
+	    margin: 0px 10px 25px 10px;
+	    }
+
+	.top_item_container img{
+	    position: relative;
+	    float: left;
+	    overflow: hidden;
+	    width: 500px;
+	    height: 280px;
+	    left: 10px;
+	    top: 10px;
+	    }
+
+	.top_name_container{
+	    /*background: linear-gradient(#d3d3d3, black);*/
+	    background-color: black;
+	    opacity: 0.25;
+	    position: absolute;
+	    top: 10px;
+	    left: 515px;
+	    width: 275px;
+	    height: 25px;
+	    text-align: center;
+	    vertical-align: middle;
+	    line-height: 25px;
+	    font-family: BentonSans,Arial,sans-serif;
+	    }
+
+	.top_name_container span{
+	    color: white;
+	    }
+
+	.top_highlight_container{
+	    position: absolute;
+	    top: 270px;
+	    left: 10px;
+	    text-align: center;
+	    font-family: BentonSans,Arial,sans-serif;
+	    height: 70px;
+	    width: 500px;
+	    }
+
+	.top_description_container{
+	    position: absolute;
+	    top: 45px;
+	    left: 515px;
+	    text-align: center;
+	    font-family: BentonSans,Arial,sans-serif;
+	    height: 200px;
+	    width: 275px;
+	    }
+
+	.top_description_container p{
+	    color: grey;
+	    text-align: center;
+	    font-family: BentonSans,Arial,sans-serif;
+
+	    }
+
+	.top_rating_container{
+	    position: absolute;
+	    top: 260px;
+	    left: 515px;
+	    text-align: center;
+	    font-family: BentonSans,Arial,sans-serif;
+	    height: 30px;
+	    width: 275px;
+	    background-color: green;
+	    opacity: 0.6;
+	    line-height: 30px;
+	    }
+
+	.top_rating_container p {
+	    color: white;
+	    vertical-align: middle;
+	    }
+
+	.star {
+	    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAQAAADI+WwIAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAJiS0dEAP+Hj8y/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAACXZwQWcAAAALAAAACgCF+qVAAAAAhUlEQVQI103NMQqCABgF4C+Fxg7QHDQ0JkFnaKqlKJBu4Np9hEDoBq2doCYP0B4UBKLYUKZvex+P/+9N/dJ3FXl9S9CopbF9U1pOkAgb3irVanOMlGqldeBoo9CmspMFOFmp/hzLmtuXzvrWvpwJFVJvLLqci8Qmzl8OhzBwcMdD6ilXfwAd9B9f78yTCQAAAABJRU5ErkJggg==);  
+	}
+
+	.rating {
+	    float: left;
+	    width: 15px;
+	    height: 20px;
+	}
+/*        
+        #movies_carousel {
+	position: relative;
+	/* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+/*	left: -200px;
+	list-style-type: none; 
+	margin: 0px;
+	padding: 0px;
+	width:9999px;
+            }
+
+        #games_carousel {
+	position: relative;
+	/* moves everything one picture width left so that if the first slider button clicked is the right one, there is an image on the left to slide over to the right insteado of a blank space */
+/*	left: -200px;
+	list-style-type: none; 
+	margin: 0px;
+	padding: 0px;
+	width:1000px;
+            }
+
+        .games{
+            position:relative;
+            overflow:hidden;
+            }
+        
+        .games img{
+            float: left;
+            width: 200px;
+            height: 200px;
+            position:relative;
+            padding:1px;
+            }  
+
+*/
+</style>

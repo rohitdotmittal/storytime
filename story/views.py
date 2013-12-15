@@ -86,7 +86,7 @@ def profile(request):
         form = user_profile_form(instance=profile)
     
 def restaurants(request):
-    items_list = list(ZomatoItem.objects.all())
+    items_list = list(ZomatoItem.objects.filter(id__range = (1,11)))
     return render_to_response('story/restaurants.html', {'z_items' : items_list})
 
 def games(request):
@@ -133,9 +133,11 @@ def hunch_page(request):
 
 def sosh_page(request):
     return render_to_response("story/sosh_page.html")
-
-
-
+"""
+@register.filter
+def split(value, splitter):
+    return value.split(splitter)
+"""
 
 
 """
