@@ -5,6 +5,7 @@
             margin-left: 0px;
             margin-right: 0px;
             margin-top: 10px;
+	    background: url('/images/images/zomato6.jpg')
             /*background-color: yellow; */
         }
 
@@ -248,15 +249,22 @@
 	    color: white;
 	    }
 
-	.like_container img{
+	.like_container {
 	    float: none;
 	    position: absolute;
 	    top: 0px;
-	    left: 328px;
-	    width: 20px;
-	    height: 20px;
-	    margin-right: 5px;
+	    left: 315px;
 	    }
+
+	.like_container img{
+	    position: absolute;
+	    width: 25px;
+	    height: 25px;
+	    }
+
+	.like_container img:hover{
+	    background: pink;
+	}
 
 	.trend_container{
 	    background: black;
