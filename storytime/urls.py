@@ -25,6 +25,7 @@ urlpatterns = patterns('',
         url(r'^games/$', 'story.views.games', name='games'),
         url(r'^shopping/$', 'story.views.shopping', name='shopping'),
         url(r'', include('social_auth.urls')),
+        url(r'^profile_update/$', 'story.views.profile_update', name='profile_update'),
         #url(r'^storytime/', include('storytime.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

@@ -5,7 +5,6 @@
             margin-left: 0px;
             margin-right: 0px;
             margin-top: 10px;
-	    background: url('/images/images/zomato6.jpg')
             /*background-color: yellow; */
         }
 
@@ -19,8 +18,25 @@
             margin-bottom: 250px;
                         
             }
+	
+	.carousel-inner img{
+	    width: 1440px;
+	    height: 620px;
+	    }
            
-        .navbar-inner{
+        .image_name {
+	    position: absolute;
+	    top: 100px;
+	    left: 200px;
+	    z-index: 2;
+	    }
+	.image_name p{
+	    font-size: 80px;
+	    color: black;
+	    font-family: BentonSans,Arial,sans-serif;
+	    }
+	
+	.navbar-inner{
             background-color: #212121;
             border: 1px solid;
             /*border-radius: 4px 4px 4px 4px;*/
@@ -198,12 +214,76 @@
 	height: 150px;  
 	width: 20px;
             }
-
-      
+	
+	.modal {
+	    display: inline;
+	}
         .modal-body{
             background-color: white;
-            height: 100px;
+            height: 800px;
+	    width: 750px;
+	    margin: 0px;
+	    position: relative;
         }
+	
+	.modal_container {
+	    display: inline-block;
+	}
+
+        #myModal img{
+            width: 560px;
+            height: 300px;
+	    left: 0px;
+	    margin: 0px;
+	    top: 0px;
+        }
+	
+	#myModal span{
+	    background: black;
+	    line-height: 30px;
+	    opacity: 0.4;
+	    color: white;
+	    border-radius: 2px;
+	    padding: 5px;
+	    margin: 5px;
+	    text-align: center;
+	}
+
+	.modal_container{
+	    position: relative;
+	    float: left;
+	    border: solid #E0E0E0 1px;
+	    overflow: hidden;
+	    width: 560px;
+	    height: 770px;
+	    margin: 0px;
+	    left: 0px;
+	    top: 0px;
+	    }
+
+	.modal_right_container {
+	    position: absolute;
+	    left: 610px;
+	    width: 100px;
+	    height: 400px;
+	}
+
+	.modal-footer {
+	    width: 750px;
+	    height: 120px;
+	}
+	
+	#modal_footer_container {
+	    width: 750px;
+	    height: 120px;
+	    overflow: hidden;
+	}
+
+	#modal_footer_container img{
+	    height: 120px;
+	    width: 120px;
+	    margin: 10px;
+	}
 
 	.top_picks p{
 	    font-family: BentonSans,Arial,sans-serif;
@@ -261,10 +341,23 @@
 	    width: 25px;
 	    height: 25px;
 	    }
-
+/*
 	.like_container img:hover{
-	    background: pink;
+	    visibility: hidden;
 	}
+*/
+	.like_container_2 {
+	    float: none;
+	    position: absolute;
+	    top: 0px;
+	    left: 315px;
+	    }
+
+	.like_container_2 img{
+	    position: absolute;
+	    width: 25px;
+	    height: 25px;
+	    }
 
 	.trend_container{
 	    background: black;

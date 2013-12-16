@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
 from django.contrib.auth.forms import UserCreationForm
-from .forms import user_profile_form
+from .forms import user_profile_form, ProfileForm
 from django.contrib.auth.decorators import login_required
 #from .forms import RegistrationForm
 
@@ -27,10 +27,10 @@ def auth_view(request):
     else:
         return HttpResponseRedirect('/invalid')
 
-def logout():
-    auth.logout(request)
-    return render_to_response('logout.html')
-
+def logout(request):
+	auth.logout(request)
+	return HttpResponseRedirect('/')
+	
 def loggedin():
     return render_to_response('loggedin.html', 
                               {'full_name': request.user.username})
@@ -72,7 +72,7 @@ def home_page(request):
     return render_to_response('story/home_page.html', args)
 
 @login_required
-def profile(request):
+def profile_backup(request):
     if request.method == 'POST':
         form = user_profile_form(request.POST, instance=request.user.profile)
         if form.is_valid():
@@ -85,6 +85,50 @@ def profile(request):
         profile = user.profile
         form = user_profile_form(instance=profile)
     
+'''
+@login_required
+def profile(request):
+	if request.method == 'POST':
+		form = user_profile_form(request.POST, instance=request.user.profile)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/all_details')
+	else:
+		user = request.user
+		profile = user.profile
+		form = user_profile_form(instance=profile)
+	args = {}
+	args.update(csrf(request))
+	args['form'] = form
+	args['user'] = user
+	return render_to_response('story/profile.html', args)
+	
+
+'''
+
+
+@login_required
+def profile_update(request):
+	if request.method == 'POST':
+		form = ProfileForm(request.POST, instance=request.user.profile)
+		if form.is_valid():
+			profile = form.save(commit=False)
+			profile.user = request.user
+			profile.save()
+			form.save_m2m() # needed since using commit=False
+			return HttpResponseRedirect('/all_details')
+	else:
+		user = request.user
+		profile = user.profile
+		form = ProfileForm(instance=profile)
+	args = {}
+	args.update(csrf(request))
+	args['form'] = form
+	args['user'] = request.user
+	return render_to_response('story/profile.html', args)
+	
+
+	
 def restaurants(request):
     items_list = list(ZomatoItem.objects.filter(id__range = (1,11)))
     return render_to_response('story/restaurants.html', {'z_items' : items_list})
@@ -106,7 +150,7 @@ def home(request):
     if 'lang' in request.session:
         session_language = request.session['lang']
 
-    return render_to_response("story/home_page.html", {'lines': Line.objects.all(), 'language' : language, 'session_language' : session_language})
+    return render_to_response("story/home.html", {'lines': Line.objects.all(), 'language' : language, 'session_language' : session_language})
 
 def zomato(request):
     return render_to_response("story/zomato.html", {'z_items' : ZomatoItem.objects.all()})
@@ -128,16 +172,18 @@ def all_details(request, **kwargs):
     username = kwargs
     return render_to_response("story/all_details.html", {'z_items' : ZomatoItem.objects.all(), 'username':username})
 
+def all_details(request, **kwargs):
+    username = kwargs
+    return render_to_response("story/all_details.html", {'z_items' : ZomatoItem.objects.all(), 'username':username})
+
 def hunch_page(request):
     return render_to_response("story/hunch_page.html")
 
 def sosh_page(request):
     return render_to_response("story/sosh_page.html")
-"""
-@register.filter
-def split(value, splitter):
-    return value.split(splitter)
-"""
+
+
+
 
 
 """

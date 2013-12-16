@@ -38,16 +38,54 @@
     {% for item in z_items %}
     <div class="res_item">
         <div class="item_container">
-            <a href="http://www.zomato.com/ncr/dominos-pizza-sector-18-noida"> <!-- instead of a fixed value, this needs to be a zomato table attribute -->
+            <a href ="#myModal" data-toggle="modal" >
             <img src="{% static 'images/images/zomato6.jpg'%}">
             <!--<img src="{% static 'images/images/zomato1.jpg'%}">  instead of a fixed value, this needs to be a zomato table attribute -->
             </a>
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" area-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="modal_container">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>  
+                                <img src="{% static 'images/images/zomato6.jpg'%}">
+                                <div class="modal_name_container">
+                                <p>{{item.name}}</p>
+                                <span>Bookmark it</span><span>facebook it</span><span>twitter it</span>
+                            <p>Here, we will have a detailed description of the product.</p>
+                            <p>This will also have a link to go to the original source of information. If someone wants to buy a ticket etc</p>
+                            <p>It will include one review, price, tips, exhaustive list of tags at the bottom.</p>
+                            <p>User will be able to scroll left and right for the next product like photos on facebook.</p>
+                                </div>
+                                </div>
+                            <div class="modal_right_container">
+                                <p>Here we will have suggestions similar to the current option.</p>
+                            </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div id="modal_footer_container">
+                                <img src="{% static 'images/images/zomato6.jpg'%}">
+                                <img src="{% static 'images/images/zomato6.jpg'%}">
+                                <img src="{% static 'images/images/zomato6.jpg'%}">
+                                <img src="{% static 'images/images/zomato6.jpg'%}">
+                                <img src="{% static 'images/images/zomato6.jpg'%}">
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+            <a href="#myModal" data-toggle="modal">
             <div class="name_container">
                 <p>{{item.name}}</p>
+            </div>
+            </a>
+            <div class="like_container_2">
+                <img src="{% static 'images/images/star-pink.png'%}">
             </div>
             <div class="like_container">
                 <img src="{% static 'images/images/star-white.png'%}">
             </div>
+
             <div class="highlight_container">
                 <p>{{item.highlights}}</p>
             </div>
@@ -67,182 +105,6 @@
     </div>
     {% endfor %}
     </div>
-<!--     
-    <div class="res_item">
-        
-
-
-
-        <div class="item_container">
-                <a href="http://www.zomato.com/ncr/dominos-pizza-sector-18-noida">
-                    <img src="{% static 'images/images/zomato1.jpg'%}">
-                </a>
-            <div class="name_container">
-                <h5 style=color:white>Restaurant Name</h5>
-            </div>
-            <div class="highlight_container">
-                <h5>Highlights of the restaurant.</h5>
-            </div>
-            <div class="rating_container">
-                <p style=color:white>Ratings for the restaurant.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="res_item">
-            <div class="item_container">
-                <a href="http://www.zomato.com/ncr/the-flying-saucer-cafe-nehru-place-delhi">
-                    <img src="{% static 'images/images/zomato2.jpg'%}">
-                </a>
-            <div class="name_container">
-                <p style=color:white>Restaurant name</p>
-            </div>
-            <div class="highlight_container">
-                <h5>Highlights of the restaurant.</h5>
-            </div>
-            <div class="rating_container">
-                <p style=color:white>Ratings for the restaurant.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="res_item">
-        <div class="item_container">
-                <a href="http://www.zomato.com/ncr/pirates-of-grill-mg-road-gurgaon">
-                    <img src="{% static 'images/images/zomato3.jpg'%}">
-                </a>
-            <div class="name_container">
-                <h5 style=color:white>Restaurant name</h5>
-            </div>
-            <div class="highlight_container">
-                <h5 class="highlight_text">Highlights of the restaurant.</h5>
-            </div>
-            <div class="rating_container">
-                <p style=color:white>Ratings for the restaurant.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="res_item">
-        <div class="item_container">
-                <a href="http://www.zomato.com/ncr/my-bar-lounge-and-restaurant-connaught-place-delhi">
-                    <img src="{% static 'images/images/zomato4.jpg'%}">
-                </a>
-            <div class="name_container">
-                <h5 style=color:white>Restaurant name</h5>
-            </div>
-            <div class="highlight_container">
-                <h5>Highlights of the restaurant.</h5>
-            </div>
-            <div class="rating_container">
-                <p style=color:white>Ratings for the restaurant.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="res_item">
-        <div class="item_container">
-                <a href="http://www.zomato.com/ncr/white-waters-connaught-place-delhi">
-                    <img src="{% static 'images/images/zomato5.jpg'%}">
-                </a>
-            <div class="name_container">
-                <h5 style=color:white>Restaurant name</h5>
-            </div>
-            <div class="highlight_container">
-                <h5>Highlights of the restaurant.</h5>
-            </div>
-            <div class="rating_container">
-                <p style=color:white>Ratings for the restaurant.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="res_item">
-        <div class="item_container">
-                <a href="http://www.zomato.com/ncr/warehouse-cafe-connaught-place-delhi">   
-                    <img src="{% static 'images/images/zomato6.jpg'%}">
-                </a>
-            <div class="name_container">
-                <h5 style=color:white>Restaurant name</h5>
-            </div>
-            <div class="highlight_container">
-                <h5>Highlights of the restaurant.</h5>
-            </div>
-            <div class="rating_container">
-                <p style=color:white>Ratings for the restaurant.</p>
-            </div>
-        </div>
-    </div>
-    <p>{{z_items.name}}</p>
-    {% for each_item in z_items %}
-        <p>{{each_item.name}}</p>
-    {% endfor %}
-
-</div>
-  
-    <div class="y-card"  data-position="" data-row="" data-cluster="" id="Roasted-garlic-mashed-potatoes-315012" data-id="Roasted-garlic-mashed-potatoes-315012" data-collections="">
-    <a class="y-image" href="/recipe/Roasted-garlic-mashed-potatoes-315012">
-    <img src="http://lh5.ggpht.com/xS3-S_W1aoFLW21S9-wjF5shKkDEfemtjPGvV0JXB6y1JXxiz_SAh_FjpjYkHmOY4tk2KlrglLvYYe-ehyqQaw=s230-c" alt="Roasted Garlic Mashed Potatoes"/>
-</a>
-    <div class="y-title">
-  <span class="btn-wrapper">
-    <button class="btn-primary login-yum-click " urlName="Roasted-garlic-mashed-potatoes-315012"><span class="text">Yum</span></button>
-      <span class="display-count mini" >
-          3.4k
-      </span>
-  </span>
-      <div>
-        <a class="y-full" href="/recipe/Roasted-garlic-mashed-potatoes-315012">
-          <h3>Roasted Garlic Mashed Potatoes</h3>
-        </a>
-      </div>
-    </div>
-  
-
-
-
-    <div class="y-ingredients">
-
-  chives, butter, russet potatoes, olive oil, garlic, kosher salt and milk
-
-</div>
-
-    <div class="y-meta">
-  
-  <span class="y-source tiny"><img height="12" src="http://static.yummly.com/favicon/Steamy-Kitchen:-recipes-and-cooking.2012-12-07.ico" width="12"/><a href="/page/steamy-kitchen">Steamy Kitchen</a>
-  
-  </span>
-  
-  <span class="y-rating r-" title="/5">
-  <span class="y-icon">&#x31;</span>
-
-  <span class="y-icon">&#x31;</span>
-
-  <span class="y-icon">&#x31;</span>
-
-  <span class="y-icon">&#x31;</span>
-
-  <span class="y-icon">&#x31;</span>
-
-
-</span>
-</div>
-
-    
-    
-      <div class="aspect-bar">
-  
-  
-  <span class="aspect-icon"><span class="graph y-icon">&#x44;</span></span>
-  
-  <span class="aspect-text">
-  
-    <span class="numbers">70</span> recent Yums
-  
-  </span>
-  
-</div>
--->
 
 {%endblock%}
 </body>

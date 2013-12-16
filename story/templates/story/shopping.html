@@ -6,6 +6,34 @@
 </head>
 <body>
     {% block content %}
+
+    <div class="container">
+        <div class="top_picks">
+            <p>Top Picks</p>
+        </div>
+        
+    </div>
+    
+    <div class="container">
+        <div class="top_item_container">
+        <a href="http://www.zomato.com/ncr/dominos-pizza-sector-18-noida">
+            <img src="{% static 'images/images/shopping1.jpeg'%}">
+        </a>
+        <div class="top_description_container">
+            <p>This will have the description of the top 5 recommendations.</p>
+        </div>
+        <div class="top_name_container">
+            <span>Top recommendation name</span>
+        </div>
+            <div class="top_rating_container">
+                <p>Ratings for the top recommendation.</p>
+            </div>    
+            <div class="top_carousel_buttons_container">
+                <p>Carousel buttons</p>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
     <div class="res_item">
         <div class="item_container">

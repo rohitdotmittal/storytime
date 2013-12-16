@@ -118,6 +118,21 @@
 </script>
 
 
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.like_container').hover(function(){
+      var image_tag = $(this).find('img');
+      image_tag.hide();
+    },
+    function(){
+      var image_tag = $('.like_container').find('img')
+      image_tag.show();
+    });
+    });
+  
+</script>
+
+
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
   </head>

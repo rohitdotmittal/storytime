@@ -193,3 +193,5 @@ LOGGING = {
         },
     }
 }
+
+AUTH_PROFILE_MODULE = 'story.Profile'

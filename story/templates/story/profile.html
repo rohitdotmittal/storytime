@@ -3,23 +3,102 @@
 
 <html lang="en">
 <head>
-    <title>Profile</title>
+    <title>Update Profile</title>
 </head>
 <body>
+
     {% block content %}
-    <h2>Profile</h2>
+	<div class="center">
+    <h2>Change your Profile settings</h2>
     
     {% for field in form %}
     {{field.error}}
     {%endfor%}
     
-    <form action="/profile/" method="post"> {% csrf_token %}
-        {{form.as_ul}}
-    
+    <form action="/profile_update/" method="post"> {% csrf_token %}
+	
+	<!--ul>
+		<li><label for="id_restaurants">Restaurants:</label> <input id="id_restaurants" name="restaurants" type="checkbox" /></li>
+			<ul>
+				<li><label for="id_date_night">Date night:</label> <input id="id_date_night" name="date_night" type="checkbox" /><label for="id_family_dinner">Family dinner:</label> <input id="id_family_dinner" name="family_dinner" type="checkbox" /><label for="id_on_a_Budget">On a Budget:</label> <input id="id_on_a_Budget" name="on_a_Budget" type="checkbox" /></li>
+			</ul>
+	</ul>
+	<ul>
+		<li><label for="id_video_games">Video games:</label> <input id="id_video_games" name="video_games" type="checkbox" /></li>
+			<ul>
+				<li><label for="id_xbox">Xbox:</label> <input id="id_xbox" name="xbox" type="checkbox" />
+				<label for="id_PS">PS:</label> <input id="id_PS" name="PS" type="checkbox" />
+				<label for="id_PC">PC:</label> <input id="id_PC" name="PC" type="checkbox" />
+			</ul>
+	</ul>
+	<ul>
+		<li><label for="id_gender">Gender:</label> <input id="id_gender" name="gender" type="checkbox" /></li>
+	</ul>
+	
+	<ul>
+		<li><label for="id_shopping">Shopping:</label> <input id="id_shopping" name="shopping" type="checkbox" /></li>
+			<ul>
+				<li><label for="id_best_deals">Best deals:</label> <input id="id_best_deals" name="best_deals" type="checkbox" />
+				<label for="id_daily_picks">Daily picks:</label> <input id="id_daily_picks" name="daily_picks" type="checkbox" />
+				
+			</ul>
+	</ul>
+	
+	<ul>
+		<li><label for="id_bars">Bars:</label> <input id="id_bars" name="bars" type="checkbox" /></li>
+			<ul>
+				<label for="id_sports_bars">Sports bars:</label> <input id="id_sports_bars" name="sports_bars" type="checkbox" />
+				<label for="id_dive_bars">Dive bars:</label> <input id="id_dive_bars" name="dive_bars" type="checkbox" />
+				<label for="id_pubs">Pubs:</label> <input id="id_pubs" name="pubs" type="checkbox" />
+			</ul>
+	</ul>
+
+	<ul>
+		<li><label for="id_clubs">Clubs:</label> <input id="id_clubs" name="clubs" type="checkbox" /></li>
+			<ul>
+				<label for="id_dance_clubs">Dance clubs:</label> <input id="id_dance_clubs" name="dance_clubs" type="checkbox" />
+			</ul>
+	</ul>
+	
+	<ul>
+		<li><label for="id_art">Art:</label> <input id="id_art" name="art" type="checkbox" /></li>
+			<ul>
+				<li><label for="id_art_galleries">Art galleries:</label> <input id="id_art_galleries" name="art_galleries" type="checkbox" />
+				<label for="id_design">Design:</label> <input id="id_design" name="design" type="checkbox" />
+			</ul>
+	</ul>
+
+
+	<ul>
+		<li><label for="id_technology">Technology:</label> <input id="id_technology" name="technology" type="checkbox" /></li>
+			<ul>
+				<label for="id_latest_phones">Latest phones:</label> <input id="id_latest_phones" name="latest_phones" type="checkbox" />
+			</ul>
+	</ul>
+	
+	<ul>
+		<li><label for="id_fashion">Fashion:</label> <input id="id_fashion" name="fashion" type="checkbox" /></li>
+			<ul>
+				<label for="id_clothes">Clothes:</label> <input id="id_clothes" name="clothes" type="checkbox" />
+				<label for="id_accessories">Accessories:</label> <input id="id_accessories" name="accessories" type="checkbox" />
+				<label for="id_shoes">Shoes:</label> <input id="id_shoes" name="shoes" type="checkbox" />
+			</ul>
+	</ul>
+	<ul>
+		<li><label for="id_electronics">Electronics:</label> <input id="id_electronics" name="electronics" type="checkbox" /></li>
+			<ul>
+				<label for="id_mobile_phones">Mobile phones:</label> <input id="id_mobile_phones" name="mobile_phones" type="checkbox" />
+				<label for="id_tvs">Tvs:</label> <input checked="checked" id="id_tvs" name="tvs" type="checkbox" />
+				<label for="id_home_theater">Home theater:</label> <input id="id_home_theater" name="home_theater" type="checkbox" />
+			</ul>
+	</ul-->
+	
+	{{ form.as_ul}}  
+
     <input type="submit" value="update" />
         
     </form>
-    
+    </div>
     {% endblock %}
 </body>
 </html>
