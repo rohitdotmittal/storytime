@@ -34,9 +34,7 @@
                                 <button type="submit" class="btn btn-default" value="login" style="margin-left:30px">Login</button>
                                 </form>
                             </div>
-                            <!--<div class="modal-footer">
-                                
-                            </div>-->
+
                             </div>
                         </div>
                     </div>
@@ -44,190 +42,40 @@
             <div class="social login"><a href="{% url "socialauth_begin" 'facebook' %}">Login with Facebook!</a></div>
             {% endblock %}
 
-    {% block content %}
+{% block content %}
 
-        <div id="home_page" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#home_page" data-slide-to="0" class="active"></li>
-              <li data-target="#home_page" data-slide-to="1"></li>
-              <li data-target="#home_page" data-slide-to="2"></li>
-              <li data-target="#home_page" data-slide-to="3"></li>
-            </ol>
-            
-            <div class="carousel-inner">
+<script type="text/javascript">
+$(function() {
+  $.vegas('slideshow', {
+    delay:5000,
+    backgrounds:[
+    {src:"{% static 'images/images/img2.jpg' %}", fade:3000 },
+    {src:"{% static 'images/images/homepage2.png' %}", fade:3000},
+    {src:"{% static 'images/images/homepage94.png' %}", fade:3000},
+    {src:"{% static 'images/images/homepage9.png' %}", fade:3000},
+  ]
+  })('overlay', {
+    src:"{% static 'images/css/vegas/overlays/01.png' %}",
+    opacity: 0.2,
+    fade:3000,
+  });
 
-                <div class="item active">
-                    <img src="{% static 'images/images/homepage92.png' %}" style=height:620/>
-                    
-                    <div class="container">
-                            <div class="image_name">
-                                <p>Events.</p>
-                            </div>
-                        <div class="carousel-caption">
-                            <form class="form-inline text-muted" role="form" id="center-form" action="/home_page" method="post">{% csrf_token %}
-                                    <div class="form-group">
-                                          <label class="sr-only" for="username">Email Address</label>
-                                          <p style="font-family:Helvetica;color:blue;font-size:20px">Email Address</p>
-                                          {{form.username}}
-                                      </div>
-                                      <div class="form-group">
-                                        <label class="sr-only" for="password">Password</label>
-                                          <p style="font-family:Helvetica;color:black;font-size:20px">Password</p>
-                                        {{form.password1}}
-                                      </div>
-                                              <div class="form-group">
-                                                <label class="sr-only" for="password">Re-enter Password</label>
-                                                <p style="font-family:Helvetica;color:black;font-size:20px">Re-enter Password</p>
-                                              <!-- sample to add an input field  <input type="password" class="form-control" id="{{form.password2}}" placeholder="Re-Enter Password"> -->
-                                              {{form.password2}}
-                                              </div>
+});
+</script>
 
-                                      <div class="form-group">
-                                      <button type="submit" class="btn btn-default" value="login" style="margin-left:30px;margin-top:25px">Sign Up</button>
-                                      </div>
+<div class="container">
+    <h1>Curated.</h1>
+    <h2>Just for you.</h2>
+</div>
 
-                                <!--<button type="submit" class="btn btn-primary" value="/register">Sign Up</button> -->                    
-                            </form>                           
-                        </div>
-                    </div>   
-                </div>
-                
-                <div class="item">
-                    <img src="{% static 'images/images/homepage9.png' %}" style=height:620/>
-                    <div class="container">
-                        <div class="image_name">
-                                <p>Fashion.</p>
-                            </div>
-                        <div class="carousel-caption">
-                            <form class="form-inline text-muted" role="form" id="center-form" action="/home_page" method="post">{% csrf_token %}
-                                    <div class="form-group">
-                                          <label class="sr-only" for="{{form.username}}">Email Address</label>
-                                          <p style="font-family:Helvetica;color:black;font-size:20px">Email Address</p>
-                                          {{form.username}}
-                                      </div>
-                                      <div class="form-group">
-                                        <label class="sr-only" for="{{form.password1}}">Email Address</label>
-                                          <p style="font-family:Helvetica;color:black;font-size:20px">Password</p>
-                                        {{form.password1}}
-                                      </div>
-                                              <div class="form-group">
-                                                <label class="sr-only" for="{{form.password1}}">Re-enter Password</label>
-                                                <p style="font-family:Helvetica;color:black;font-size:20px">Re-enter Password</p>
-                                              <!-- sample to add an input field  <input type="password" class="form-control" id="{{form.password2}}" placeholder="Re-Enter Password"> -->
-                                              {{form.password2}}
-                                              </div>
-
-                                      <div class="form-group">
-                                      <button type="submit" class="btn btn-default" value="login" style="margin-left:30px;margin-top:25px">Sign Up</button>
-                                      </div>
-
-                                <!--<button type="submit" class="btn btn-primary" value="/register">Sign Up</button> -->                    
-                            </form>                           
-
-<!--                            <form class="form-inline" role="form" id="center-form">
-                                <h3 style="color:white">The best places around you.</h3>
-                                <div class="form-group">
-                                    <label class="sr-only" for="subscribeemail">Email address</label>
-                                    <input type="email" class="form-control" id="subscribeemail" placeholder="Subscribe Email">
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" placeholder="Enter Password">
-                                </div>
-                                <div class="checkbox">
-                                </div>
-                                <button type="submit" class="btn btn-default">Sign Up</button>                    
-                            </form> -->
-                        </div>
-                    </div>   
-                </div>
-                
-                <div class="item">
-                    <img src="{% static 'images/images/homepage1.png' %}" style=height:620/>
-                    <div class="container">
-                        <div class="image_name">
-                                <p>Romantic Dates.</p>
-                            </div>
-                        <div class="carousel-caption">
-                            <form class="form-inline text-muted" role="form" id="center-form" action="/home_page" method="post">{% csrf_token %}
-                                    <div class="form-group">
-                                          <label class="sr-only" for="{{form.username}}">Email Address</label>
-                                          <p style="font-family:Helvetica;color:black;font-size:20px">Email Address</p>
-                                          {{form.username}}
-                                      </div>
-                                      <div class="form-group">
-                                        <label class="sr-only" for="{{form.password1}}">Email Address</label>
-                                          <p style="font-family:Helvetica;color:black;font-size:20px">Password</p>
-                                        {{form.password1}}
-                                      </div>
-                                              <div class="form-group">
-                                                <label class="sr-only" for="{{form.password1}}">Re-enter Password</label>
-                                                <p style="font-family:Helvetica;color:black;font-size:20px">Re-enter Password</p>
-                                              <!-- sample to add an input field  <input type="password" class="form-control" id="{{form.password2}}" placeholder="Re-Enter Password"> -->
-                                              {{form.password2}}
-                                              </div>
-
-                                      <div class="form-group">
-                                      <button type="submit" class="btn btn-default" value="login" style="margin-left:30px;margin-top:25px">Sign Up</button>
-                                      </div>
-
-                                <!--<button type="submit" class="btn btn-primary" value="/register">Sign Up</button> -->                    
-                            </form>                           
-                            </div>
-                        </div>
-                    </div>   
-                
-                <div class="item">
-                    <img src="{% static 'images/images/homepage91.png' %}" style=height:620px, width=1440px/>
-                    <div class="container">
-                        <div class="image_name">
-                                <p>Destinations.</p>
-                            </div>
-                        <div class="carousel-caption">
-                            <form class="form-inline text-muted" role="form" id="center-form" action="/home_page" method="post">{% csrf_token %}
-                                    <div class="form-group">
-                                          <label class="sr-only" for="{{form.username}}">Email Address</label>
-                                          <p style="font-family:Helvetica;color:black;font-size:20px">Email Address</p>
-                                          {{form.username}}
-                                      </div>
-                                      <div class="form-group">
-                                        <label class="sr-only" for="{{form.password1}}">Email Address</label>
-                                          <p style="font-family:Helvetica;color:black;font-size:20px">Password</p>
-                                        {{form.password1}}
-                                      </div>
-                                              <div class="form-group">
-                                                <label class="sr-only" for="{{form.password1}}">Re-enter Password</label>
-                                                <p style="font-family:Helvetica;color:black;font-size:20px">Re-enter Password</p>
-                                              <!-- sample to add an input field  <input type="password" class="form-control" id="{{form.password2}}" placeholder="Re-Enter Password"> -->
-                                              {{form.password2}}
-                                              </div>
-
-                                      <div class="form-group">
-                                      <button type="submit" class="btn btn-default" value="login" style="margin-left:30px;margin-top:25px">Sign Up</button>
-                                      </div>
-
-                                <!--<button type="submit" class="btn btn-primary" value="/register">Sign Up</button> -->                    
-                            </form>                           
-                            </div>
-                        </div>
-                    </div>                   
-                
-                </div>    
-            </div>
-            
-            
-            <a class="left carousel-control" href="#home_page" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#home_page" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-        
-        </div>
-    
-    
-    </div>
-    
+<!-- images for maximage
+<div id="maximage">        
+	<img src="{% static 'images/images/homepage92.png'%}" width="1440" height="500" />
+	<img src="{% static 'images/images/homepage9.png'%}" width="1440" height="500" />
+	<img src="{% static 'images/images/homepage91.png'%}" width="1440" height="550" />
+	<img src="{% static 'images/images/homepage6.png'%}" width="1440" height="550" />
+</div>
+-->
 {% endblock %}    
 </body>
 </html>

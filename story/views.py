@@ -1,7 +1,7 @@
 # Create your views here.
 #from django.http import HttpResponse
 from django.shortcuts import render_to_response
-from .models import Line, ZomatoItem, user_profile
+from .models import Line, ZomatoItem, user_profile, FashionItem
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
@@ -137,7 +137,8 @@ def games(request):
     return render_to_response('story/games.html')
 
 def shopping(request):
-    return render_to_response('story/shopping.html')
+    items_list = list(ZomatoItem.objects.filter(id__range = (1,11)))
+    return render_to_response('story/shopping.html', {'s_items':items_list})
 
 
 def home(request):

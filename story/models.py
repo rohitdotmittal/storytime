@@ -30,6 +30,16 @@ class ZomatoItem(models.Model):
     def __unicode__(self):
         return self.name
 
+class FashionItem(models.Model):
+    name = models.CharField(max_length=255)
+    url = models.CharField(max_length=255)
+    images = models.CharField(max_length=255)
+    category = models.CharField(max_length=255)
+    description = models.CharField(max_length=1000)
+
+    def __unicode__(self):
+        return self.name
+
 class user_profile(models.Model):
 	user = models.OneToOneField(User)
 

@@ -8,7 +8,12 @@
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' type='text/javascript'></script>
+      <script src="{% static "images/css/cycle.js" %}" type='text/javascript'></script>
+      <script src="{% static "images/css/maximize.js" %}" type='text/javascript'></script>
       <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="{% static "images/css/vegas/jquery.vegas.js" %}"></script>
+<!--      <script type="text/javascript" src="{% static "images/css/all_jquery.js" %}"></script> -->
+      
 <!--
       <script type="text/javascript">
       $(document).ready(function() {
@@ -128,10 +133,23 @@
       var image_tag = $('.like_container').find('img')
       image_tag.show();
     });
-    });
+  });
+</script>
+<script type="text/javascript">
+  $(function(){
+	// Trigger maximage
+	$('#maximage').maximage();
+});
   
 </script>
 
+<script type="text/javascript">
+$('body').bind('vegasstart', 
+  function(e) {
+  	alert( 'A slideshow has started' );
+  }
+);
+</script>
 
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
