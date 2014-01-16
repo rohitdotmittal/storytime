@@ -188,7 +188,7 @@ def sosh_page(request):
 def email_item(request):
     items_list = list(ZomatoItem.objects.filter(id__range = (1,11)))
     gmail_user = "rmittal@popsugar.com"
-    gmail_pwd = "Mitt4l!"
+    gmail_pwd = ""
     FROM = 'rmittal@popsugar.com'
     TO = 'rohit.mittal.2006@gmail.com'
     SUBJECT = "Cool email from Rohit's site"

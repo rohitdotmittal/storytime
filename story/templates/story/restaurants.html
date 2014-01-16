@@ -5,14 +5,6 @@
     <title><!-- Insert your title here --></title>
 </head>
 <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=7879648351";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
     {% block content %}
     <div class="container">
@@ -59,10 +51,9 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>  
                                 <img src="{% static 'images/images/zomato6.jpg'%}">
                                 <div class="modal_name_container">
-                                <p>{{item.name}}</p>
+                                <p>{{item.name}}</p>                                
+                                <div width="500" class="fb-like" data-href="http://gentle-reaches-4721.herokuapp.com/restaurants/" data-layout="standard" data-action="recommend" data-show-faces="false" data-share="true" data-colorscheme="dark"></div>
                                 <span><a href="/email_item">Email it</a></span>
-                                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-                                <span>Facebook it</span>
                                 <span><a href="http://twitter.com/home/?status= I found a great place called {{item.name}} on Rohit's site. Check it out." target="_blank">Tweet it</a></span>
                             <p>Here, we will have a detailed description of the product.</p>
                             <p>This will also have a link to go to the original source of information. If someone wants to buy a ticket etc</p>
