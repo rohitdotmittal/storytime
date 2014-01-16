@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     
-            <div class="social login"><a href="{% url "socialauth_begin" 'facebook' %}">Login with Facebook!</a></div>
+            <a href="{% url "socialauth_begin" 'facebook' %}">Facebook!</a>
             {% endblock %}
 
 {% block content %}
@@ -53,21 +53,45 @@ $(function() {
     {src:"{% static 'images/images/homepage2.png' %}", fade:3000},
     {src:"{% static 'images/images/homepage94.png' %}", fade:3000},
     {src:"{% static 'images/images/homepage9.png' %}", fade:3000},
-  ]
+  ],
+    walk:function(step){
+            $('#image'+step).addClass('overlay');
+    }
   })('overlay', {
     src:"{% static 'images/css/vegas/overlays/01.png' %}",
     opacity: 0.2,
-    fade:3000,
+    fade:3000
   });
 
 });
 </script>
+<script type="text/javascript">
+    $('body').bind('vegaswalk', 
+  function(e, bg, step) {
+    $('#image'+step+' > *').css({'top':'200', 'left':'200'});
+  }
+);    
+</script>
 
-<div class="container">
+<div id="image0">
+    <h1>Fun.</h1>
+    <h2>Don't be bored.</h2>
+</div>
+
+<div id="image1">
     <h1>Curated.</h1>
     <h2>Just for you.</h2>
 </div>
 
+<div id="image2">
+    <h1>Travel.</h1>
+    <h2>New Destinations.</h2>
+</div>
+
+<div id="image3">
+    <h1>Fashion.</h1>
+    <h2>New Destinations.</h2>
+</div>
 <!-- images for maximage
 <div id="maximage">        
 	<img src="{% static 'images/images/homepage92.png'%}" width="1440" height="500" />

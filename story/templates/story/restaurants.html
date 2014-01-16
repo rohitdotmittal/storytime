@@ -5,6 +5,15 @@
     <title><!-- Insert your title here --></title>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=7879648351";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
     {% block content %}
     <div class="container">
         <div class="top_picks">
@@ -39,7 +48,7 @@
     <div class="res_item">
         <div class="item_container">
             <a href ="#myModal" data-toggle="modal" >
-            <img src="{% static 'images/images/zomato6.jpg'%}">
+            <img class = "item_image_1" src="{% static 'images/images/zomato6.jpg'%}">
             <!--<img src="{% static 'images/images/zomato1.jpg'%}">  instead of a fixed value, this needs to be a zomato table attribute -->
             </a>
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" area-hidden="true">
@@ -51,20 +60,22 @@
                                 <img src="{% static 'images/images/zomato6.jpg'%}">
                                 <div class="modal_name_container">
                                 <p>{{item.name}}</p>
-                                <span>Bookmark it</span><span>facebook it</span><span>twitter it</span>
+                                <span><a href="/email_item">Email it</a></span>
+                                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                                <span>Facebook it</span>
+                                <span><a href="http://twitter.com/home/?status= I found a great place called {{item.name}} on Rohit's site. Check it out." target="_blank">Tweet it</a></span>
                             <p>Here, we will have a detailed description of the product.</p>
                             <p>This will also have a link to go to the original source of information. If someone wants to buy a ticket etc</p>
                             <p>It will include one review, price, tips, exhaustive list of tags at the bottom.</p>
                             <p>User will be able to scroll left and right for the next product like photos on facebook.</p>
                                 </div>
                                 </div>
-                            <div class="modal_right_container">
+                           <!-- <div class="modal_right_container">
                                 <p>Here we will have suggestions similar to the current option.</p>
-                            </div>
+                            </div> -->
                             </div>
                             <div class="modal-footer">
                                 <div id="modal_footer_container">
-                                <img src="{% static 'images/images/zomato6.jpg'%}">
                                 <img src="{% static 'images/images/zomato6.jpg'%}">
                                 <img src="{% static 'images/images/zomato6.jpg'%}">
                                 <img src="{% static 'images/images/zomato6.jpg'%}">
@@ -79,11 +90,9 @@
                 <p>{{item.name}}</p>
             </div>
             </a>
-            <div class="like_container_2">
-                <img src="{% static 'images/images/star-pink.png'%}">
-            </div>
+
             <div class="like_container">
-                <img src="{% static 'images/images/star-white.png'%}">
+                <img class = "like_image_1" src="{% static 'images/images/star-white.png'%}">
             </div>
 
             <div class="highlight_container">

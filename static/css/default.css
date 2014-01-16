@@ -23,14 +23,14 @@
 	.home_page{
 	    display: inline-block;
 	}
-	
+/*	
 	#maximage{
 	    width: 1440px;
 	    height: 550px;
 	    left: 0px;
 	    top: 0px;
 	}
-	
+*/	
 	#titles {
 	    left: 100px;
 	    top: 250px;
@@ -43,6 +43,7 @@
 	    left: 200px;
 	    z-index: 2;
 	    }
+	
 	.image_name p{
 	    font-size: 80px;
 	    color: black;
@@ -51,34 +52,45 @@
 	
 	.navbar-inner{
             background-color: #212121;
-            border: 1px solid;
-            /*border-radius: 4px 4px 4px 4px;*/
-            min-height: 0px;
-            padding-left: 0px;
-            padding-right: 20px;
-            }
-       
-        .navbar-collapse{
-            background-color: #212121;
-            border-color: #212121;
-            border: 1px solid;
-            border-radius: 4px 4px 4px 4px;
-            min-height: 0px;
-            padding-left: 0px;
-            padding-right: 20px;
-            }
-            
-        .nav ul span{
-	    font-family: BentonSans,Arial,sans-serif;
-	    height: 100px;
-	    text-decoration: none;
-	    
+            /*border: 1px solid;
+            border-radius: 4px 4px 4px 4px;*/
+	    border-radius: 4px 4px 4px 4px;
+	    border-color: yellow;
+	    width: 1438px;
+	    height: 50px;
+	    line-height: 50px;
             }
 
-        .nav ul{
-            color: yellow;
-            background:transparent;
-        }
+	.navbar-inner a{
+            color: whitesmoke;
+	    font-size: 16px;
+	    text-decoration: none;
+	    padding: 10px;
+	    vertical-align: middle;
+	    line-height: 50px;
+
+            }
+      
+        .navbar-collapse{
+            /*background-color: #212121;
+            border-color: #212121;
+            border: 1px solid;*/
+            border-radius: 4px 4px 4px 4px;
+            padding-left: 0px;
+            padding-right: 5px;
+	    font-size: 15px;
+	    color: white;
+            }
+        
+	.social_login a{
+	    color: white;
+	}
+	    
+        .nav span{
+	    font-family: BentonSans,Arial,sans-serif;
+	    text-decoration: none;
+	    color: white;
+            }
 
         .restaurants {
             position:relative;
@@ -314,7 +326,7 @@
 	    margin: 10px 10px 25px 10px;
 	    }
 
-	.item_container img{
+	.item_image_1 {
 	    position: relative;
 	    float: left;
 	    overflow: hidden;
@@ -343,22 +355,32 @@
 	    }
 
 	.like_container {
-	    float: none;
+	    float: right;
 	    position: absolute;
 	    top: 0px;
 	    left: 315px;
+	    background-image: url('../images/star-white.png');
+	    background-size: 25px;
+	    background-repeat: no-repeat;
 	    }
 
+	.like_container img:hover{
+	    background-image: url('../images/star-pink.png');
+	    background-size: 25px;
+	    background-repeat: no-repeat;
+	}
+
+/*
 	.like_container img{
 	    position: absolute;
 	    width: 25px;
 	    height: 25px;
 	    }
-/*
+
 	.like_container img:hover{
 	    visibility: hidden;
 	}
-*/
+
 	.like_container_2 {
 	    float: none;
 	    position: absolute;
@@ -371,7 +393,7 @@
 	    width: 25px;
 	    height: 25px;
 	    }
-
+*/
 	.trend_container{
 	    background: black;
 	    float: none;

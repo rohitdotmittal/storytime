@@ -8,6 +8,8 @@ from django.core.context_processors import csrf
 from django.contrib.auth.forms import UserCreationForm
 from .forms import user_profile_form, ProfileForm
 from django.contrib.auth.decorators import login_required
+import smtplib
+from email.mime.text import MIMEText
 #from .forms import RegistrationForm
 
 def login(request):
@@ -183,6 +185,27 @@ def hunch_page(request):
 def sosh_page(request):
     return render_to_response("story/sosh_page.html")
 
+def email_item(request):
+    items_list = list(ZomatoItem.objects.filter(id__range = (1,11)))
+    gmail_user = "rmittal@popsugar.com"
+    gmail_pwd = "Mitt4l!"
+    FROM = 'rmittal@popsugar.com'
+    TO = 'rohit.mittal.2006@gmail.com'
+    SUBJECT = "Cool email from Rohit's site"
+    TEXT = "Rohit came up with this cool idea about the site, take a look at it."
+    message = """\From: %s\nTo: %s\nSubject: %s\n\n%s
+        """ % (FROM, TO, SUBJECT, TEXT)
+
+#server = smtplib.SMTP(SERVER) 
+    server = smtplib.SMTP("smtp.gmail.com", 587) #or port 465 doesn't seem to work!
+    server.ehlo()
+    server.starttls()
+    server.login(gmail_user, gmail_pwd)
+    server.sendmail(FROM, TO, message)
+    #server.quit()
+    server.close()
+
+    return render_to_response('story/restaurants.html', {'z_items' : items_list})
 
 
 
