@@ -1,5 +1,8 @@
 {% extends 'story/base_nov16-17.47.html' %}
 {% load static %}
+{% load story_tags %}
+{% load items_tags %}
+
 <html lang="en">
 <head>
     <title><!-- Insert your title here --></title>
@@ -13,7 +16,7 @@
         </div>
         
     </div>
-    
+<!--    
     <div class="container">
         <div class="top_item_container">
         <a href="http://www.zomato.com/ncr/dominos-pizza-sector-18-noida">
@@ -33,14 +36,75 @@
             </div>
         </div>
     </div>
+-->
+    <div class="container">
+        <div class="top_item_container">
+        <div id="restaurants" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#restaurants" data-slide-to="0" class="active"></li>
+              <li data-target="#restaurants" data-slide-to="1"></li>
+              <li data-target="#restaurants" data-slide-to="2"></li>
+              <li data-target="#restaurants" data-slide-to="3"></li>
+            </ol>
+            
+            <div class="carousel-inner">
 
+                <div class="item active">
+                    <img class="imagetest" src="{% static 'images/images/zomato6.jpg' %}" />
+                    <div class="top_name_container">
+                        <span>Top recommendation name</span>
+                    </div>
+                    <div class="top_description_container">
+                        <p>This will have the description of the top 5 recommendations.</p>
+                    </div>
+                    
+                </div>
+                
+                <div class="item">
+                    <img src="{% static 'images/images/zomato6.jpg' %}" />
+                    <div class="top_name_container">
+                        <span>Top recommendation name</span>
+                    </div>
+                    <div class="top_description_container">
+                        <p>This will have the description of the top 5 recommendations.</p>
+                    </div>
+
+                </div>
+                
+                <div class="item">
+                    <img src="{% static 'images/images/zomato6.jpg' %}" />
+                    <div class="top_name_container">
+                        <span>Top recommendation name</span>
+                    </div>
+                    <div class="top_description_container">
+                        <p>This will have the description of the top 5 recommendations.</p>
+                    </div>
+
+                    </div>   
+                
+                <div class="item">
+                    <img src="{% static 'images/images/zomato6.jpg' %}" />
+                    <div class="top_name_container">
+                        <span>Top recommendation name</span>
+                    </div>
+                    <div class="top_description_container">
+                        <p>This will have the description of the top 5 recommendations.</p>
+                    </div>
+
+                    </div>                   
+                
+                </div>    
+            </div>   
+        </div>
+    </div>
+    
     <div class="container">
     
     {% for item in z_items %}
     <div class="res_item">
         <div class="item_container">
             <a href ="#myModal" data-toggle="modal" >
-            <img class = "item_image_1" src="{% static 'images/images/zomato6.jpg'%}">
+            <img class = "item_image_1" src="{% get_image item.images %}">
             <!--<img src="{% static 'images/images/zomato1.jpg'%}">  instead of a fixed value, this needs to be a zomato table attribute -->
             </a>
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" area-hidden="true">
@@ -49,7 +113,8 @@
                             <div class="modal-body">
                                 <div class="modal_container">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>  
-                                <img src="{% static 'images/images/zomato6.jpg'%}">
+                                <!--<img src="{% static 'images/images/zomato6.jpg'%}"> -->
+                                <img src="{% get_image item.images %}">
                                 <div class="modal_name_container">
                                 <p>{{item.name}}</p>                                
                                 <div width="500" class="fb-like" data-href="http://gentle-reaches-4721.herokuapp.com/restaurants/" data-layout="standard" data-action="recommend" data-show-faces="false" data-share="true" data-colorscheme="dark"></div>
@@ -95,7 +160,12 @@
             </div>
             <hr>
             <div class="bookmark_container">
-                <p>{{item.area}}, Date Night, Hangout, Classy</p>
+                <p>
+                    {% for items in item.recommendations|get_items %}
+                       <a href="/restaurants/{{items}}">{{items}}</a>,
+                    
+                    {% endfor %}
+                </p>
             </div>
             
 <!--            <div class="rating_container">

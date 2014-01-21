@@ -27,6 +27,11 @@ urlpatterns = patterns('',
         url(r'', include('social_auth.urls')),
         url(r'^profile_update/$', 'story.views.profile_update', name='profile_update'),
         url(r'^email_item/$', 'story.views.email_item', name='email item'),
+        url(r'^restaurants/Hangout/$', 'story.views.hangouts', name='hangouts'),
+        url(r'^restaurants/Classy/$', 'story.views.classy', name='classy'),
+        url(r'^restaurants/Fun/$', 'story.views.fun', name='fun'),
+        url(r'^restaurants/Date%20Night/$', 'story.views.date_night', name='date_night'),
+        
         #url(r'^storytime/', include('storytime.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

@@ -207,6 +207,21 @@ def email_item(request):
 
     return render_to_response('story/restaurants.html', {'z_items' : items_list})
 
+def hangouts(request):
+    items_list = ZomatoItem.objects.all().filter(recommendations__icontains="Hangout")
+    return render_to_response('story/hangouts.html', {'z_items': items_list})
+
+def classy(request):
+    items_list = ZomatoItem.objects.all().filter(recommendations__icontains="Classy")
+    return render_to_response('story/classy.html', {'z_items': items_list})
+
+def fun(request):
+    items_list = ZomatoItem.objects.all().filter(recommendations__icontains="Fun")
+    return render_to_response('story/fun.html', {'z_items': items_list})
+
+def date_night(request):
+    items_list = ZomatoItem.objects.all().filter(recommendations__icontains="Date Night")
+    return render_to_response('story/date_night.html', {'z_items': items_list})
 
 
 

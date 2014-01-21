@@ -1,0 +1,149 @@
+{% extends 'story/base_nov16-17.47.html' %}
+{% load static %}
+{% load story_tags %}
+{% load items_tags %}
+
+<html lang="en">
+<head>
+    <title><!-- Insert your title here --></title>
+</head>
+<body>
+
+    {% block content %}
+    
+    <div class="container">
+    
+    {% for item in z_items %}
+    <div class="res_item">
+        <div class="item_container">
+            <a href ="#myModal" data-toggle="modal" >
+            <img class = "item_image_1" src="{% get_image item.images %}">
+            <!--<img src="{% static 'images/images/zomato1.jpg'%}">  instead of a fixed value, this needs to be a zomato table attribute -->
+            </a>
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" area-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="modal_container">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>  
+                                <!--<img src="{% static 'images/images/zomato6.jpg'%}"> -->
+                                <img src="{% get_image item.images %}">
+                                <div class="modal_name_container">
+                                <p>{{item.name}}</p>                                
+                                <div width="500" class="fb-like" data-href="http://gentle-reaches-4721.herokuapp.com/restaurants/" data-layout="standard" data-action="recommend" data-show-faces="false" data-share="true" data-colorscheme="dark"></div>
+                                <span><a href="/email_item">Email it</a></span>
+                                <span><a href="http://twitter.com/home/?status= I found a great place called {{item.name}} on Rohit's site. Check it out." target="_blank">Tweet it</a></span>
+                            <p>Here, we will have a detailed description of the product.</p>
+                            <p>This will also have a link to go to the original source of information. If someone wants to buy a ticket etc</p>
+                            <p>It will include one review, price, tips, exhaustive list of tags at the bottom.</p>
+                            <p>User will be able to scroll left and right for the next product like photos on facebook.</p>
+                                </div>
+                                </div>
+                           <!-- <div class="modal_right_container">
+                                <p>Here we will have suggestions similar to the current option.</p>
+                            </div> -->
+                            </div>
+                            <div class="modal-footer">
+                                <div id="modal_footer_container">
+                                <img src="{% static 'images/images/zomato6.jpg'%}">
+                                <img src="{% static 'images/images/zomato6.jpg'%}">
+                                <img src="{% static 'images/images/zomato6.jpg'%}">
+                                <img src="{% static 'images/images/zomato6.jpg'%}">
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+            <a href="#myModal" data-toggle="modal">
+            <div class="name_container">
+                <p>{{item.name}}</p>
+            </div>
+            </a>
+
+            <div class="like_container">
+                <img class = "like_image_1" src="{% static 'images/images/star-white.png'%}">
+            </div>
+
+            <div class="highlight_container">
+                <p>{{item.highlights}}</p>
+            </div>
+            <div class="trend_container">
+                <img src="{% static 'images/images/star-white.png'%}">
+                <p>250</p>
+            </div>
+            <hr>
+            <div class="bookmark_container">
+                <p>
+                    {% for items in item.recommendations|get_items %}
+                       <a href="/restaurants/{{items}}">{{items}}</a>,
+                    
+                    {% endfor %}
+                </p>
+            </div>
+            
+<!--            <div class="rating_container">
+                <p style=color:white>{{item.rating_scale}}, {{item.rating_value}}</p>
+            </div>
+-->        </div>
+    </div>
+    {% endfor %}
+    </div>
+
+{%endblock%}
+</body>
+</html>
+
+
+<!--
+.y-card{display:inline-block;margin:10px;position:relative;text-align:left;text-decoration:none;vertical-align:top;width:280px;}
+.y-card > a{display:block;}
+.y-card > a:hover{text-decoration:none}
+.y-card > a.y-image{background-color:#cdcabf;height:280px;width:280px;}
+.y-card > a.y-image > div{color:#dbd8ce;height:280px;overflow:hidden;text-transform:uppercase;}
+.y-card > a.y-image > div div{font-size:60px;font-weight:bold;left:-10px;line-height:90%;position:relative;top:-10px}
+.y-card > a.y-image > img{height:auto;width:100%}
+.y-card .y-title{background-color:#383838;padding:10px;}
+.y-card .y-title > .btn-wrapper{position:absolute;top:265px}
+.y-card .y-title > div{display:block;height:44px;margin-top:10px;overflow:hidden;}
+.y-card .y-title > div a{text-decoration:none;}
+.y-card .y-title > div a h3{color:#fff;display:inline;position:relative}
+.y-card > div{background-color:#fff;padding:10px}
+.y-card > div.y-ingredients{color:#6c6c6c;font-size:13px;line-height:18px;height:54px;overflow:hidden;padding-bottom:0;}
+.y-card > div.y-ingredients b.more{color:#e16120;cursor:default;font-size:11px;line-height:18px;white-space:nowrap}
+.y-card > div.y-meta{max-height:15px;overflow:hidden;}
+.y-card > div.y-meta span.y-source{color:#6c6c6c;display:inline-block;font-weight:bold;width:180px;vertical-align:top;overflow:hidden;position:relative;white-space:nowrap;}
+.y-card > div.y-meta span.y-source:before{content:'';position:absolute;top:0;right:0;bottom:0;left:auto;width:1em;background-image:-webkit-linear-gradient(right, #fff, rgba(255,255,255,0) 100%);background-image:-moz-linear-gradient(right, #fff, rgba(255,255,255,0) 100%);background-image:-o-linear-gradient(right, #fff, rgba(255,255,255,0) 100%);background-image:-ms-linear-gradient(right, #fff, rgba(255,255,255,0) 100%);background-image:linear-gradient(to left, #fff, rgba(255,255,255,0) 100%)}
+.y-card > div.y-meta span.y-source img{margin-right:4px;vertical-align:text-top}
+.y-card > div.y-meta span.y-rating{float:right;font-size:11px;line-height:15px}
+.y-card > div.not-interested-bar,.y-card > div.aspect-bar{height:20px;overflow:hidden;background-color:#f8f8f8;font-size:11px;border-top:1px solid #eee;padding:5px 10px;text-align:right;}
+.y-card > div.not-interested-bar .delete-icon,.y-card > div.aspect-bar .delete-icon{margin-right:5px;line-height:11px}
+.y-card > div.not-interested-bar .display-text,.y-card > div.aspect-bar .display-text{vertical-align:top}
+.y-card > div.aspect-bar{text-align:left;color:#6c6c6c;}
+.y-card > div.aspect-bar .aspect-icon{vertical-align:middle}
+.y-card > div.aspect-bar .numbers{font-weight:bold}
+.y-card .sponsored{background-color:#000;background-color:rgba(0,0,0,0.5);color:#fff;font-size:11px;line-height:18px;padding:1px 10px;position:absolute;left:0;top:0}
+.y-card-short > div{padding:5px 10px 4px}
+@media only screen and (min-width: 481px){.y-card{width:230px;}
+.y-card > a.y-image{height:230px;width:230px;}
+.y-card > a.y-image > div{color:#dbd8ce;height:230px;overflow:hidden;text-transform:uppercase;}
+.y-card > a.y-image > div div{font-size:60px;font-weight:bold;left:-10px;line-height:90%;position:relative;top:-10px}
+.y-card > div.y-title .btn-wrapper{top:215px}
+.y-card > div.y-title >div{height:66px}
+.y-card > div.y-meta span.y-source{width:130px}
+}.popup-card{display:inline-block;max-width:230px;}
+.popup-card .title{border-bottom:1px solid #eee;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:-10px -10px 10px;padding:10px}
+.popup-card .y-ingredients{color:#aaa;margin-bottom:10px}
+.popup-card span.y-source{color:#6c6c6c;display:inline-block;font-weight:bold;width:130px;vertical-align:top;overflow:hidden;position:relative;white-space:nowrap;}
+.popup-card span.y-source:before{content:'';position:absolute;top:0;right:0;bottom:0;left:auto;width:1em;background-image:-webkit-linear-gradient(right, #fff, rgba(255,255,255,0) 100%);background-image:-moz-linear-gradient(right, #fff, rgba(255,255,255,0) 100%);background-image:-o-linear-gradient(right, #fff, rgba(255,255,255,0) 100%);background-image:-ms-linear-gradient(right, #fff, rgba(255,255,255,0) 100%);background-image:linear-gradient(to left, #fff, rgba(255,255,255,0) 100%)}
+.popup-card span.y-source img{margin-right:4px;vertical-align:text-top}
+.y-card.ad{background:#fff;height:456px;}
+.y-card.ad .y-heading{background:#383838;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;color:#fff;font-size:18px;height:40px;line-height:40px;margin-bottom:0;padding:0 10px}
+.y-card.ad .suggestion{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;color:#6c6c6c;max-height:140px;padding:25px 10px;}
+.y-card.ad .suggestion + .suggestion{border-top:1px solid #eee}
+.y-card.ad .suggestion .image,.y-card.ad .suggestion .meta{display:inline-block;vertical-align:top}
+.y-card.ad .suggestion .image{background-color:#cdcabf;height:70px;margin-right:10px;overflow:hidden;width:70px;}
+.y-card.ad .suggestion .image img{width:100%;height:auto;vertical-align:top}
+.y-card.ad .suggestion .meta{max-height:90px;overflow:hidden;width:180px;}
+.y-card.ad .suggestion .meta h4{color:#e16120;font-weight:bold;margin-bottom:0}
+.y-card.ad .suggestion .meta h4,.y-card.ad .suggestion .meta p{font-size:11px;line-height:15px}
+-->
